@@ -1,0 +1,418 @@
+Microsoft Evaluation Software License Agreement
+
+Windows 8 Enterprise
+
+Thank you for choosing to evaluate Microsoft Windows 8 Enterprise. This is a license agreement
+between you and Microsoft Corporation (or, based on where you live, one of its affiliates) that
+describes your rights to use the Windows 8 evaluation software. For your convenience, we’ve
+organized this agreement into two parts. The first part includes introductory terms phrased in a
+question and answer format; the Additional Terms follow and contain greater detail. You should
+review the entire agreement, including any linked terms, because all of the terms are important
+and together create this contract that applies to you. You can review linked terms by pasting the
+forward link into your browser window once the software is running. The Additional Terms contain
+a binding arbitration clause and class action waiver. If you live in the United States, these affect
+your rights to resolve a dispute with Microsoft, and you should read them carefully.
+By accepting this agreement or using the software, you agree to all of these terms and consent to
+the transmission of certain information during activation and for Internet---based features of the
+software. If you do not accept and comply with these terms, you may not use the software or
+features.
+
+How can I use the software? We do not sell our software or your copy of it – we only license it.
+Under our license, we grant you the right to install and run that one copy on one computer (the
+licensed computer), for use by one person at a time only to demonstrate and internally evaluate
+the software, but only if you comply with all the terms of this agreement. Typically, this means you
+can install one copy of the software on a computer and then you can use the software on that
+computer. The software is not licensed to be used as server software or for commercial hosting ---
+so you may not make the software available for simultaneous use by multiple users over a network.
+For more information on multiple user scenarios and virtualization, see the Additional Terms.
+How long can I use the software? You may use the software for 90 days after the software is
+activated. The software will stop running after those 90 days and you may not receive any other
+notice. You may not be able to access data used with the software when it stops running.
+May I make a backup copy? Yes, you may make a single copy of the software for backup purposes,
+and use that backup copy as described below.
+
+How does Internet activation work? The first time you connect to the Internet while using the
+software, the software will automatically contact Microsoft or its affiliate to confirm the software
+is genuine, and the license is associated with the licensed computer. This process is called
+“activation.” Because activation is meant to identify unauthorized changes to the licensing or
+activation functions of the software, and to otherwise prevent unlicensed use of the software, you
+may not bypass or circumvent activation.
+
+Does the software collect my personal information? If you connect your computer to the Internet,
+some features of the software may connect to Microsoft or service provider computer systems to
+send or receive information, including personal information. You may not always receive a
+separate notice when they connect. If you choose to use any of these features, you agree to send 
+or receive this information when using that feature. Many of these features can be switched off or
+you can choose not to use them.
+
+How do we use your information? Microsoft uses the information it collects through the software
+features to upgrade or fix the software and otherwise improve our products and services. In
+certain circumstances, we also share it with others. For example, we share error reports with
+relevant hardware and software vendors, so that they can use the information to improve how
+their products run with Microsoft products. You agree that we may use and disclose the
+information as described in our Privacy Statement, at go.microsoft.com/fwlink/?linkid=190175.
+What does this agreement apply to? This agreement applies to the software, the media on which
+you received the software, and also any Microsoft updates, supplements, and services for the
+software, unless other terms come with them. It also applies to Windows apps that are included
+with Windows, which are separate from the software features.
+
+Are there things I’m not allowed to do with the software? Yes. Because the software is licensed,
+not sold, Microsoft reserves all rights (such as rights under intellectual property laws) not
+expressly granted in this agreement. In particular, this license does not give you any right to, and
+you may not: use the software in a live operating environment; use or virtualize features of the
+software separately, publish, copy (other than the permitted backup copy), rent, lease, or lend the
+software; transfer the software (except as permitted by this agreement), attempt to
+circumvent technical protection measures in the software, reverse engineer, decompile, or
+disassemble the software, except if the laws where you live permit this even when our agreement
+does not. In that case, you may do only what your law allows. When using Internet---based
+features or Microsoft Family Safety, you may not use those features in any way that could
+interfere with anyone else’s use of them, or to try to gain access to any service, data, account or
+network, in an unauthorized manner.
+
+Additional TERMS
+
+1. License Rights and Multi User Scenarios
+  a. Computer. In this agreement, “computer” means a hardware system (whether physical or
+  virtual) with an internal storage device capable of running the software. A hardware partition or
+  blade is considered to be a computer. The software is licensed to run on up to two processors on
+  the licensed computer.
+  
+  b. Multiple versions. The software includes multiple versions (such as 32---bit and 64---bit versions),
+  and you may install only one of those versions.
+  
+  c. Multiple or pooled connections. Hardware or software you use to multiplex or pool connections,
+  or reduce the number of devices or users that access or use the software does not reduce the
+  number of licenses you need. You may only use such hardware or software if you have a license for
+  each copy of the software you are using.
+  
+  d. Device connections. You may allow up to 20 other devices to access the software installed on
+  the licensed computer for the purpose of using file services, print services, Internet information
+  services, and Internet connection sharing and telephony services on the licensed computer. You 
+  may allow any number of devices to access the software on the licensed computer to synchronize
+  data between devices. This section does not mean, however, that you have the right to install the
+  software, or use the primary function of the software (other than the features listed in this section)
+  on any of these other devices.
+  
+  e. Client Hyper---V. You may use the Client Hyper---V technology in the software to create a virtual
+  instance of this or other software, but only if the software you are creating the virtual instance of
+  permits you to do that.
+  
+  f. Use in a virtualized environment. If you use virtualization software, including Client Hyper---V, to
+  create one or more virtual computers on a single computer hardware system, each virtual
+  computer, and the physical computer, is considered a separate computer for purposes of this
+  agreement. This license allows you to install only one copy of the software for use on one computer,
+  whether that computer is physical or virtual. If you want to use the software on more than one
+  virtual computer, you must obtain separate copies of the software and a separate license for each
+  copy. Content protected by digital rights management technology or other full---volume disk drive
+  encryption technology may be less secure in a virtualized environment.
+  
+  g. Remote access. The software contains Remote Desktop and Remote Assistance technologies
+  that enable the software or applications installed on the licensed computer to be accessed remotely
+  from other devices.
+  
+    • Remote Desktop. Remote Desktop or similar technologies is licensed for a single user,
+    who is either accessing that software from a local pc, or remotely. For this agreement,
+    you are the licensed single user. You may access the software running on this licensed
+    host pc from another device, by using Remote Desktop. Other users, one at a time, may
+    access the licensed software running on this host pc, from any device using Remote
+    Desktop, but only if the remote device is separately licensed to run an edition of Windows
+    8 or Windows RT.
+    
+    • Remote Assistance. You may use Remote Assistance or similar technologies to share an
+    active session without obtaining any additional licenses for the software. Remote
+    Assistance allows one user to directly connect to another user’s computer, usually to
+    correct problems.
+    
+2. Binding Arbitration and Class Action Waiver
+
+a. Application. This Section 2 applies to any dispute except it does not include A Dispute relating to
+the enforcement or VALIDITY of your, Microsoft’s, or either of our licensors’ intellectual property
+rights. Dispute means any dispute, action, or other controversy between you and Microsoft
+concerning the software (including its price) or this agreement, whether in contract, warranty, tort,
+statute, regulation, ordinance, or any other legal or equitable basis.
+“Dispute” will be given the broadest possible meaning allowable under law.
+
+b. Notice of dispute. In the event of a dispute, you or Microsoft must give the other a Notice of
+Dispute, which is a written statement of the name, address and contact information of the party
+giving it, the facts giving rise to the dispute, and the relief requested. You must send any Notice of 
+Dispute by U.S. Mail to Microsoft Corporation, ATTN: LCA ARBITRATION, One Microsoft Way,
+Redmond, WA 98052---6399. A form is available at
+go.microsoft.com/fwlink/?linkid=245499. Microsoft will send any Notice of Dispute to you by U.S.
+Mail to your address if we have it, or otherwise to your e---mail address. You and Microsoft will
+attempt to resolve any dispute through informal negotiation within 60 days from the date the
+Notice of Dispute is sent. After 60 days, you or Microsoft may commence arbitration.
+
+c. Small claims court. You may also litigate any dispute in small claims court in your county of
+residence or King County, Washington, if the dispute meets all requirements to be heard in the small
+claims court. You may litigate in small claims court whether or not you negotiated informally first.
+
+d. Binding arbitration. If you and Microsoft do not resolve any dispute by informal negotiation or
+in small claims court, any other effort to resolve the dispute will be conducted exclusively by binding
+arbitration. You are giving up the right to litigate (or participate in as a party or class member) all
+disputes in court before a judge or jury. Instead, all disputes will be resolved before a neutral
+arbitrator, whose decision will be final except for a limited right of appeal under the Federal
+Arbitration Act. Any court with jurisdiction over the parties may enforce the arbitrator’s award.
+
+e. Class action waiver. Any proceedings to resolve or litigate any dispute in any forum will be
+conducted solely on an individual basis. Neither you nor Microsoft will seek to have any dispute
+heard as a class action, private attorney general action, or in any other proceeding in which either
+party acts or proposes to act in a representative capacity. No arbitration or proceeding will be
+combined with another without the prior written consent of all parties to all affected arbitrations
+or proceedings.
+
+f. Arbitration procedure, costs, fees and incentives. Any arbitration will be conducted by the
+American Arbitration Association (the “AAA”) under its Commercial Arbitration Rules and in many
+cases its Supplementary Procedures for Consumer---Related Disputes. For more information, see
+adr.org or call 1---800---778---7879. In a dispute involving $75,000 or less, Microsoft will promptly
+reimburse your filing fees and pay the AAA’s and arbitrator’s fees. You and Microsoft agree to the
+terms governing procedures, fees and incentives at go.microsoft.com/fwlink/?linkid=245495. To
+commence arbitration, submit the form available at go.microsoft.com/fwlink/?linkid=245497 to the
+AAA. You agree to commence arbitration only in your county of residence or in King County,
+Washington. Microsoft agrees to commence arbitration only in your county of residence.
+
+g. Claims or disputes must be filed within one year. To the extent permitted by law, any claim or
+dispute under this agreement to which Section 2 applies must be filed within one year in small
+claims court (Section 2.c) or in arbitration (Section 2.d). The one---year period begins when the claim
+or dispute first could be filed. If such a claim or dispute is not filed within one year, it is permanently
+barred.
+h. Severability. If the class action waiver in Section 2.e is found to be illegal or unenforceable as to
+all or some parts of a dispute, then Section 2 (arbitration) will not apply to those parts. Instead,
+those parts will be severed and proceed in a court of law, with the remaining parts proceeding in
+arbitration. If any other provision of Section 2 is found to be illegal or unenforceable, that provision
+will be severed with the remainder of Section 2 remaining in full force and effect. 
+
+3. CHOICE OF LAW
+
+The laws of the state or country where you live govern all claims and disputes under this
+agreement, including breach of contract claims and claims under state consumer protection laws,
+unfair competition laws, implied warranty laws, for unjust enrichment, and in tort. If you acquired
+the software in any other country, the laws of that country apply. This agreement describes certain
+legal rights. You may have other rights, including consumer rights, under the laws of your state or
+country. You may also have rights with respect to the party from whom you acquired the software.
+This agreement does not change those other rights if the laws of your state or country do not
+permit it to do so.
+
+4. ACTIVATION
+
+a. More on how activation works. The software will notify you whether the installed copy of the
+software is properly licensed. During activation, the software will send information about the
+software and your computer to Microsoft. This information includes the version, language, and
+product key of the software, the Internet protocol address of the computer, and information
+derived from the hardware configuration of the computer. For more information about activation,
+see go.microsoft.com/fwlink/?linkid=190175. If the licensed computer is connected to the Internet,
+the software will automatically connect to Microsoft for activation. You can also activate the
+software manually by Internet. In either case, Internet service charges may apply.
+b. Re---activation. Some changes to your computer components or the software may require re---
+activation of the software.
+
+c. Activation failure. During online activation, if the licensing or activation functions of the software
+are found to be counterfeit, improperly licensed, or include unauthorized changes, activation will
+fail and the software will attempt to repair itself by replacing any tampered Microsoft software with
+genuine Microsoft software. The software will notify you if the installed copy of the software is
+improperly licensed or includes unauthorized changes. In addition, you may receive reminders
+to obtain a properly licensed copy of the software. You may not be able to obtain certain
+updates or upgrades from Microsoft if your copy of the software is found to be improperly licensed.
+
+5. Internet---based FEATURES; privacy
+
+The following software features use Internet protocols, which send to Microsoft (or its suppliers or
+service providers) computer information, such as your Internet protocol address, the type of
+operating system, browser and name and version of the software you are using, and the language
+code of the computer where you installed the software. Microsoft uses this information to make
+the Internet---based features available to you, in accordance with the Windows 8 Privacy
+Statement, at go.microsoft.com/fwlink/?linkid=190175. Some Internet--- based features may be
+delivered at a later date via Microsoft’s Windows Update service------if, for example, you acquire an
+application that relies on one of those services.
+
+a. Windows Update. If you use the Windows Update service in the software, updates or
+downloads to the Windows Update service will be required for proper functioning of the
+service, from time to time, and will be downloaded and installed without further notice to
+you. 
+
+b. Windows Digital Rights Management technology. Some content owners use Windows
+digital rights management technology (WDRM) to protect their copyrights and other
+intellectual property, including by disabling the software’s ability to play protected content
+if WDRM fails. You agree that Microsoft may include a revocation list with the licenses.
+
+c. Windows Media Player. When you use Windows Media Player, it checks with Microsoft for
+compatible online music services in your region and new versions of the player. You may
+only use Windows Media Player as described at go.microsoft.com/fwlink/?linkid=104605.
+
+d. Windows Defender. If turned on, Windows Defender will search your computer for many
+types of malicious software, including viruses, worms, bots, rootkits, “spyware”, “adware”
+and other potentially unwanted software. If you choose the “recommended” security
+settings when you first start using the software, such malware and other potentially
+unwanted software rated “high” or “severe” will automatically be removed. This removal
+may result in other software on your computer ceasing to work or your breaching a license
+to use that software. It is possible that software that is not unwanted may be removed or
+disabled. If you use Windows Defender and Windows Update, Windows Defender is
+regularly updated through Windows Update.
+
+e. Malicious software removal. If you use Windows Update, at least once each month the
+software will scan for and remove from your computer the malware listed at
+go.microsoft.com/fwlink/?linkid=241725. After the scan completes, a report will be sent to
+Microsoft with specific information about malware detected, errors, and other information about
+your computer. This information is used to improve the software and other Microsoft products.
+You may disable the software’s reporting functionality by following the instructions found at
+go.microsoft.com/fwlink/?linkid=241725.
+
+f. SmartScreen Filter. If enabled, the SmartScreen Filter will check the addresses of webpages
+and downloads you attempt to view against a frequently updated list of webpages and
+downloads that have been reported to Microsoft as unsafe or suspicious. SmartScreen will
+also check downloaded programs that you attempt to run against a list of commonly
+downloaded or run programs to help you make more informed trust decisions. More
+information can be found by visiting the Internet Explorer Privacy Statement
+go.microsoft.com/fwlink/?linkid=239590. By enabling SmartScreen in either Windows or
+Internet Explorer, you consent to this feature, and you agree to use the SmartScreen Filter
+only in conjunction with Windows or Internet Explorer. You may not, either manually or by
+enabling or authorizing any software or service, copy, display, distribute, collect or store
+any data provided by the SmartScreen Filter.
+
+g. IPv6 Network Address Translation (NAT) Traversal service (Teredo). Each time you start
+your licensed computer, Teredo will attempt to locate a public Internet Protocol version 6
+(IPv6) service on the Internet. This occurs automatically when your licensed computer is
+connected to a public or private network, but does not occur on managed networks such
+as enterprise domains. If you use a program that requires Teredo to use IPv6 connectivity,
+or if you configure your firewall to always enable IPv6 connectivity, then Teredo will 
+periodically contact the Microsoft Teredo service over the Internet. The only information
+sent to Microsoft is standard computer information and the name of the service requested
+(for example teredo.ipv6.microsoft.com). The information sent from your computer by
+Teredo is used to determine if your computer is connected to the Internet and if it can
+locate a public IPv6 service. Once the service is located, information is sent to maintain a
+connection with the IPv6 service.
+
+h. Plug and Play and Plug and Play Extensions. Your computer may not have the drivers
+needed to communicate with hardware that you connect to your computer. If so, the
+update feature of the software can obtain and install the correct driver on your computer.
+An administrator can disable this update feature.
+
+i. Digital certificates. The software uses digital certificates to confirm the identity of Internet
+users sending X.509 standard encrypted information, to digitally sign files and macros, and
+to verify the integrity and origin of file contents. The software may retrieve and update
+certificates, certificate revocation lists, and the list of trusted certification authorities, over
+the Internet.
+
+j. Network awareness. This feature determines whether a system is connected to a network
+by either passive monitoring of network traffic or active DNS or HTTP queries. The query
+transfers only standard TCP/IP or DNS information for routing purposes. You can switch off
+the active query feature through a registry setting.
+k. Accelerators. When you click on or move your mouse over an Accelerator in Internet
+Explorer, any of the following may be sent to the applicable service provider (which may
+not be Microsoft): the title and full web address or URL of the current webpage, standard
+computer information, and any content you have selected. For more information, see
+go.microsoft.com/fwlink/?linkid=239590.
+
+l. Search provider update. The software will download an update to the data on your
+computer about search providers. This update upgrades your providers with the latest
+features, such as new icons or search suggestions. This is a one---time update, but the
+software will try to perform the update several times if it does not successfully download
+the update.
+For more information, see go.microsoft.com/fwlink/?linkid=239590.
+
+m. Cookies. If you choose to use online features in the software, such as online Help and
+Support, cookies may be set. To learn how to block, control and delete cookies, please read
+the cookies section of the privacy statement at go.microsoft.com/fwlink/?linkid=74170.
+n. Windows Store. In addition to the terms of this agreement for Internet based features, you
+may only use the Windows Store under the terms available at
+go.microsoft.com/fwlink/?linkid=246694. Those terms also contain information about Windows
+Notification Service. Windows apps or any preinstalled apps in your Start may use Windows
+Notification Service. You agree that we may send you notifications as described in the Windows 8
+Privacy Statement and Windows Store terms of service. 
+
+6. WINDOWS Apps
+
+Windows apps (such as Mail, Messaging, Calendar and People) are apps that are developed by
+Microsoft, included with Windows, and licensed to you under this agreement. You can access each
+Windows app from its corresponding tile in Start. Some of the Windows apps provide an access
+point to online services, and the use of those services is sometimes governed by separate terms and
+privacy policies. You can view these terms and policies by looking at the app’s settings. Unless other
+terms are displayed to you or presented in the app’s settings, you agree the services that you access
+from the Windows apps are governed by the Microsoft Services Agreement at
+go.microsoft.com/fwlink/?linkid=246338, or for Windows apps that access Xbox services, the
+xbox.com/legal/livetou. We continuously work to improve the services and we may change the
+services at any time. The services may not be available in certain countries. You may choose to
+uninstall any Windows app at any time, and you may also choose to reinstall any Windows app by
+downloading it from the Windows Store. Some Windows apps include advertising. You may choose
+to opt out of personalized advertising by visiting choice.live.com.
+
+7. Fonts, Icons, Images, and SoundS
+
+a. Font components. While the software is running, you may use its fonts to display and print
+content. You may temporarily download the fonts to a printer or other output device to print
+content, and you may embed fonts in content only as permitted by the embedding restrictions
+in the fonts.
+
+b. Icons, images, and sounds. While the software is running, you may access and use its icons,
+images, sounds, and media only from the licensed computer. You may not share the sample
+images, sounds and media provided with the software or use them for any other purpose.
+
+8. .NET FRAMEWORK
+The software includes one or more components of the .NET Framework, which you may use only
+as described at go.microsoft.com/fwlink/?linkid=66406, if you use the .NET Framework
+components to conduct internal benchmark testing.
+
+9. H.264/AVC AND MPEG---4 VISUAL STANDARDS AND VC---1 VIDEO STANDARDS
+THIS PRODUCT IS LICENSED UNDER THE AVC, THE VC---1, AND THE MPEG---4 PART 2 VISUAL
+PATENT PORTFOLIO LICENSES FOR THE PERSONAL AND NON---COMMERCIAL USE OF A
+CONSUMER TO (i) ENCODE VIDEO IN COMPLIANCE WITH THE ABOVE STANDARDS (“VIDEO
+STANDARDS”) AND/OR (ii) DECODE AVC, VC---1, AND MPEG---4 PART 2 VIDEO THAT WAS
+ENCODED BY A CONSUMER ENGAGED IN A PERSONAL AND NON---COMMERICAL ACTIVITY
+AND/OR WAS OBTAINED FROM A VIDEO PROVIDER LICENSED TO PROVIDE SUCH VIDEO. NO
+LICENSE IS GRANTED OR SHALL BE IMPLIED FOR ANY OTHER USE. ADDITIONAL INFORMATION MAY
+BE OBTAINED FROM MPEG LA, L.L.C SEE MPEGLA.COM.
+
+10. ADOBE FLASH PLAYER
+The software may include a version of Adobe Flash Player. You agree that your use of the Adobe
+Flash Player is governed by the license terms for Adobe Systems Incorporated, at 
+go.microsoft.com/fwlink/?linkid=248532. Adobe and Flash are either registered trademarks or
+trademarks of Adobe Systems Incorporated in the United States and/or other countries.
+
+11. EXPORT RESTRICTIONS
+You must comply with all domestic and international export laws and regulations that apply to the
+software, which include restrictions on destinations, end users, and end use. For further
+information, visit microsoft.com/exporting.
+
+12. SUPPORT SERVICES
+Because the software is provided “as---is”, Microsoft may not provide support services for it.
+
+13. NO WARRANTY
+The software is licensed “as---is” and you bear the risk of using it. Microsoft gives no express
+warranties, guarantees or conditions. You may have additional consumer rights under your local
+laws which this agreement cannot change. To the extent permitted under your local laws,
+Microsoft excludes the implied warranties of merchantability, fitness for a particular purpose and
+non---infringement.
+
+14. Limitation on and Exclusion of Remedies and Damages
+If you have any basis for recovering damages from Microsoft, you can recover only direct damages
+up to U.S. $5.00. You may not recover any other damages, including consequential, lost profits,
+special, indirect, or incidental damages. The damage exclusions and limitations in this agreement
+apply even if repair, replacement or a refund for the software does not fully compensate you for
+any losses or if Microsoft knew or should have known about the possibility of the damages. Some
+states and countries do not allow the exclusion or limitation of incidental, consequential, or other
+damages, so those limitations or exclusions may not apply to you. If your local law allows you to
+recover other damages from Microsoft even though we do not, you cannot recover more than U.S.
+$5.00, or the amount you paid for the software, whichever is higher.
+
+15. ENTIRE AGREEMENT
+
+This agreement (together with terms accompanying any software supplements, updates, and
+services that are provided by Microsoft and that you use), and the terms contained in web links
+listed in this agreement, are the entire agreement for the software and any such supplements,
+updates, and services (unless Microsoft provides other terms with such supplements, updates, or
+services). You can review this agreement after your software is running by following the
+instructions in the Action Center---Windows Activation within the software. You can also review
+the terms at any of the links in this agreement after your software is running by typing the urls into
+your browser address bar, and you agree to do so. You agree that for each service or included app
+that is governed by this agreement and also specific terms linked in this agreement, you will read
+the terms for that service before using the service. You understand that by using the service, you
+ratify this agreement and the linked terms. There are also informational links in this agreement.
+The links containing terms that bind you and us are:
+
+• go.microsoft.com/fwlink/?linkid=190175 (Windows 8 Privacy Statement);
+• go.microsoft.com/fwlink/?linkid=245495 (Arbitration Procedure) 
+• go.microsoft.com/fwlink/?linkid=104605 (Windows Media Player)
+• go.microsoft.com/fwlink/?linkid=246694 (Windows Store Terms of Use)
+• go.microsoft.com/fwlink/?linkid=246338 (Microsoft Services Agreement)
+• xbox.com/legal/livetou (XBox Live Terms of Use)
+• go.microsoft.com/fwlink/?linkid=66406 (.NET Framework Terms)
+• go.microsoft.com/fwlink/?linkid=248532 (Adobe Flash Player License Terms) 

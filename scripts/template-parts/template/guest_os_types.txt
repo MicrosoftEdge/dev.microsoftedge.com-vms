@@ -1,0 +1,527 @@
+#Parallels
+
+win-311         	win-95          	win-98          	win-me          
+win-nt          	win-2000        	win-xp          	win-2003        
+win-vista       	win-2008        	win-7           	win-8           
+win-2012        	win-8.1         	win-10          	win             
+rhel            	suse            	debian          	fedora-core     
+fc              	xandros         	ubuntu          	mandriva        
+mandrake        	centos          	psbm            	redhat          
+opensuse        	linux-2.4       	linux-2.6       	linux           
+mageia          	mint            	macosx          	tiger           
+macos-10.4      	leopard         	macos-10.5      	snowleopard     
+macos-10.6      	freebsd         	freebsd-4       	freebsd-5       
+freebsd-6       	freebsd-7       	freebsd-8       	freebsd         
+chrome-1        	chrome          	msdos-6.22      	msdos           
+os2-3           	os2-4           	os2-45          	ecomstation-1.1 
+ecomstation-1.2 	os2             	netware-4       	netware-5       
+netware-6       	netware         	solaris-9       	solaris-10      
+solaris-11      	opensolaris     	solaris         	qnx             
+openstep        	other           	
+
+#VirtualBox
+
+ID:          Other
+Description: Other/Unknown
+Family ID:   Other
+Family Desc: Other
+64 bit:      false
+
+ID:          Other_64
+Description: Other/Unknown (64-bit)
+Family ID:   Other
+Family Desc: Other
+64 bit:      true 
+
+ID:          Windows31
+Description: Windows 3.1
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows95
+Description: Windows 95
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows98
+Description: Windows 98
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          WindowsMe
+Description: Windows ME
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          WindowsNT4
+Description: Windows NT 4
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows2000
+Description: Windows 2000
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          WindowsXP
+Description: Windows XP (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          WindowsXP_64
+Description: Windows XP (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Windows2003
+Description: Windows 2003 (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows2003_64
+Description: Windows 2003 (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          WindowsVista
+Description: Windows Vista (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          WindowsVista_64
+Description: Windows Vista (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Windows2008
+Description: Windows 2008 (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows2008_64
+Description: Windows 2008 (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Windows7
+Description: Windows 7 (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows7_64
+Description: Windows 7 (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Windows8
+Description: Windows 8 (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows8_64
+Description: Windows 8 (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Windows81
+Description: Windows 8.1 (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows81_64
+Description: Windows 8.1 (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Windows2012_64
+Description: Windows 2012 (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Windows10
+Description: Windows 10 (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          Windows10_64
+Description: Windows 10 (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          WindowsNT
+Description: Other Windows (32-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      false
+
+ID:          WindowsNT_64
+Description: Other Windows (64-bit)
+Family ID:   Windows
+Family Desc: Microsoft Windows
+64 bit:      true 
+
+ID:          Linux22
+Description: Linux 2.2
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Linux24
+Description: Linux 2.4 (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Linux24_64
+Description: Linux 2.4 (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Linux26
+Description: Linux 2.6 / 3.x (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Linux26_64
+Description: Linux 2.6 / 3.x (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          ArchLinux
+Description: Arch Linux (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          ArchLinux_64
+Description: Arch Linux (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Debian
+Description: Debian (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Debian_64
+Description: Debian (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          OpenSUSE
+Description: openSUSE (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          OpenSUSE_64
+Description: openSUSE (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Fedora
+Description: Fedora (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Fedora_64
+Description: Fedora (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Gentoo
+Description: Gentoo (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Gentoo_64
+Description: Gentoo (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Mandriva
+Description: Mandriva (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Mandriva_64
+Description: Mandriva (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          RedHat
+Description: Red Hat (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          RedHat_64
+Description: Red Hat (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Turbolinux
+Description: Turbolinux (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Turbolinux_64
+Description: Turbolinux (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Ubuntu
+Description: Ubuntu (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Ubuntu_64
+Description: Ubuntu (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Xandros
+Description: Xandros (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Xandros_64
+Description: Xandros (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Oracle
+Description: Oracle (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Oracle_64
+Description: Oracle (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Linux
+Description: Other Linux (32-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      false
+
+ID:          Linux_64
+Description: Other Linux (64-bit)
+Family ID:   Linux
+Family Desc: Linux
+64 bit:      true 
+
+ID:          Solaris
+Description: Oracle Solaris 10 5/09 and earlier (32-bit)
+Family ID:   Solaris
+Family Desc: Solaris
+64 bit:      false
+
+ID:          Solaris_64
+Description: Oracle Solaris 10 5/09 and earlier (64-bit)
+Family ID:   Solaris
+Family Desc: Solaris
+64 bit:      true 
+
+ID:          OpenSolaris
+Description: Oracle Solaris 10 10/09 and later (32-bit)
+Family ID:   Solaris
+Family Desc: Solaris
+64 bit:      false
+
+ID:          OpenSolaris_64
+Description: Oracle Solaris 10 10/09 and later (64-bit)
+Family ID:   Solaris
+Family Desc: Solaris
+64 bit:      true 
+
+ID:          Solaris11_64
+Description: Oracle Solaris 11 (64-bit)
+Family ID:   Solaris
+Family Desc: Solaris
+64 bit:      true 
+
+ID:          FreeBSD
+Description: FreeBSD (32-bit)
+Family ID:   BSD
+Family Desc: BSD
+64 bit:      false
+
+ID:          FreeBSD_64
+Description: FreeBSD (64-bit)
+Family ID:   BSD
+Family Desc: BSD
+64 bit:      true 
+
+ID:          OpenBSD
+Description: OpenBSD (32-bit)
+Family ID:   BSD
+Family Desc: BSD
+64 bit:      false
+
+ID:          OpenBSD_64
+Description: OpenBSD (64-bit)
+Family ID:   BSD
+Family Desc: BSD
+64 bit:      true 
+
+ID:          NetBSD
+Description: NetBSD (32-bit)
+Family ID:   BSD
+Family Desc: BSD
+64 bit:      false
+
+ID:          NetBSD_64
+Description: NetBSD (64-bit)
+Family ID:   BSD
+Family Desc: BSD
+64 bit:      true 
+
+ID:          OS2Warp3
+Description: OS/2 Warp 3
+Family ID:   OS2
+Family Desc: IBM OS/2
+64 bit:      false
+
+ID:          OS2Warp4
+Description: OS/2 Warp 4
+Family ID:   OS2
+Family Desc: IBM OS/2
+64 bit:      false
+
+ID:          OS2Warp45
+Description: OS/2 Warp 4.5
+Family ID:   OS2
+Family Desc: IBM OS/2
+64 bit:      false
+
+ID:          OS2eCS
+Description: eComStation
+Family ID:   OS2
+Family Desc: IBM OS/2
+64 bit:      false
+
+ID:          OS2
+Description: Other OS/2
+Family ID:   OS2
+Family Desc: IBM OS/2
+64 bit:      false
+
+ID:          MacOS
+Description: Mac OS X (32-bit)
+Family ID:   MacOS
+Family Desc: Mac OS X
+64 bit:      false
+
+ID:          MacOS_64
+Description: Mac OS X (64-bit)
+Family ID:   MacOS
+Family Desc: Mac OS X
+64 bit:      true 
+
+ID:          MacOS106
+Description: Mac OS X 10.6 Snow Leopard (32-bit)
+Family ID:   MacOS
+Family Desc: Mac OS X
+64 bit:      false
+
+ID:          MacOS106_64
+Description: Mac OS X 10.6 Snow Leopard (64-bit)
+Family ID:   MacOS
+Family Desc: Mac OS X
+64 bit:      true 
+
+ID:          MacOS107_64
+Description: Mac OS X 10.7 Lion (64-bit)
+Family ID:   MacOS
+Family Desc: Mac OS X
+64 bit:      true 
+
+ID:          MacOS108_64
+Description: Mac OS X 10.8 Mountain Lion (64-bit)
+Family ID:   MacOS
+Family Desc: Mac OS X
+64 bit:      true 
+
+ID:          MacOS109_64
+Description: Mac OS X 10.9 Mavericks (64-bit)
+Family ID:   MacOS
+Family Desc: Mac OS X
+64 bit:      true 
+
+ID:          DOS
+Description: DOS
+Family ID:   Other
+Family Desc: Other
+64 bit:      false
+
+ID:          Netware
+Description: Netware
+Family ID:   Other
+Family Desc: Other
+64 bit:      false
+
+ID:          L4
+Description: L4
+Family ID:   Other
+Family Desc: Other
+64 bit:      false
+
+ID:          QNX
+Description: QNX
+Family ID:   Other
+Family Desc: Other
+64 bit:      false
+
+ID:          JRockitVE
+Description: JRockitVE
+Family ID:   Other
+Family Desc: Other
+64 bit:      false
+

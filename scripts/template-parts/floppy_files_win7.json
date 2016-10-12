@@ -1,0 +1,40 @@
+{
+  "builders": [
+    {
+      "type": "hyperv-iso",		
+      "floppy_files": [
+        "answer_files/7/autounattend.xml",
+        "floppy/common/preprovisioner.cmd",
+        "floppy/bginfo/bgconfig.bgi",
+        "floppy/eula/win7/eula.txt"
+      ]
+    },
+    {
+      "type": "virtualbox-iso",	
+      "floppy_files": [
+        "answer_files/7/autounattend.xml",
+        "floppy/common/preprovisioner.cmd",
+        "floppy/bginfo/bgconfig.bgi",
+        "floppy/eula/win7/eula.txt"
+      ]
+    },
+    {
+      "type": "vmware-iso",
+      "floppy_files": [
+        "answer_files/7/autounattend.xml",
+        "floppy/common/preprovisioner.cmd",
+        "floppy/bginfo/bgconfig.bgi",
+        "floppy/eula/win7/eula.txt"
+      ]
+    },
+    {
+      "type": "parallels-iso",
+      "floppy_files": [
+        "answer_files/7/autounattend.xml",
+        "floppy/common/preprovisioner.cmd",
+        "floppy/bginfo/bgconfig.bgi",
+        "floppy/eula/win7/eula.txt"
+      ]
+    }    
+  ]
+}

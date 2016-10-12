@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!-- Microsoft Virtual Machine Options and Settings -->
+<preferences>
+	<version type="string">2.0</version>
+	<event_logging>
+		<preference_change>
+			<enabled type="boolean">false</enabled>
+		</preference_change>
+	</event_logging>
+	<hardware>
+		<bios>
+			<base_board>
+				<serial_number type="string">2239-4341-1642-9350-9545-7276-81</serial_number>
+			</base_board>
+			<bios_guid type="string">{50069CC6-2266-443E-9BD6-A777426C3755}</bios_guid>
+			<bios_serial_number type="string">2239-4341-1642-9350-9545-7276-81</bios_serial_number>
+			<chassis>
+				<asset_tag type="string">9791-1806-1911-9702-3921-0693-28</asset_tag>
+				<serial_number type="string">2239-4341-1642-9350-9545-7276-81</serial_number>
+			</chassis>
+			<cmos type="bytes">00004000F020378002FFFF2F00FF3F1000003F00000000000031004C07070707065CFFFF208580FF03000000200C01800CFC00000000000000000000000000901A32E252580050E999E62401002784004A2080240000000000085AACFE1032547698BAE400000000000003000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</cmos>
+			<time_bytes type="bytes">19005500080006291114</time_bytes>
+		</bios>
+		<memory>
+			<ram_size type="integer">1024</ram_size>
+		</memory>
+		<pci_bus>
+			<ethernet_adapter>
+				<controller_count type="integer">1</controller_count>
+				<ethernet_controller id="0">
+					<ethernet_card_address type="bytes">0003FF2FE6C0</ethernet_card_address>
+					<id type="integer">0</id>
+					<virtual_network>
+						<id type="bytes">FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</id>
+						<name type="string">Unplugged</name>
+					</virtual_network>
+				</ethernet_controller>
+			</ethernet_adapter>
+			<video_adapter>
+				<vram_size type="integer">16</vram_size>
+			</video_adapter>
+			<ide_adapter>
+				<ide_controller id="0">
+					<location id="0">
+						<drive_type type="integer">1</drive_type>
+						<pathname>
+							<absolute type="string">C:\{{name}}.vhd</absolute>
+							<relative type="string">.\{{name}}.vhd</relative>
+						</pathname>
+						<undo_pathname>
+							<absolute type="string" />
+							<relative type="string" />
+						</undo_pathname>
+					</location>
+				</ide_controller>
+				<ide_controller id="1">
+					<location id="0">
+						<drive_type type="integer">2</drive_type>
+						<pathname>
+							<absolute type="string">D</absolute>
+							<relative type="string" />
+						</pathname>
+					</location>
+				</ide_controller>
+			</ide_adapter>
+		</pci_bus>
+		<standard>
+			<name type="string">Virtual PC 7</name>
+			<version type="string">0001.0000.0000</version>
+		</standard>
+		<super_io>
+			<floppy id="0">
+				<pathname>
+					<absolute type="string" />
+				</pathname>
+			</floppy>
+			<parallel_port>
+				<port_type type="integer">0</port_type>
+			</parallel_port>
+			<serial_port>
+				<connect_immediately type="boolean">false</connect_immediately>
+			</serial_port>
+		</super_io>
+	</hardware>
+	<integration>
+		<microsoft>
+			<folder_sharing>
+				<enabled type="boolean">false</enabled>
+				<load_allowed type="boolean">false</load_allowed>
+			</folder_sharing>
+			<heartbeat>
+				<failure_attempts type="integer">12</failure_attempts>
+				<failure_interval type="integer">10</failure_interval>
+				<rate type="integer">10</rate>
+				<time type="integer">60</time>
+			</heartbeat>
+			<host_time_sync>
+				<enabled type="boolean">true</enabled>
+				<frequency type="integer">15</frequency>
+				<threshold type="integer">10</threshold>
+			</host_time_sync>
+			<mouse>
+				<allow type="boolean">true</allow>
+			</mouse>
+			<version>
+				<guest_os>
+					<build_number type="string">6.01.7601</build_number>
+					<long_name type="string">{{name}}</long_name>
+					<short_name type="string">{{name}}</short_name>
+					<computer_name type="string">{{computer_name}}</computer_name>
+				</guest_os>
+				<additions_number type="string">14.1.7600.16403</additions_number>
+			</version>
+		</microsoft>
+	</integration>
+	<properties>
+		<creator>
+			<build type="string">6.1.7601.17514</build>
+			<name type="string">Virtual PC</name>
+		</creator>
+		<modifier>
+			<build type="string">6.1.7601.17514</build>
+			<name type="string">Virtual PC</name>
+		</modifier>
+	</properties>
+	<settings>
+		<configuration>
+			<next_id type="integer">1</next_id>
+			<saved_state>
+				<path>
+					<absolute type="string" />
+					<relative type="string" />
+				</path>
+			</saved_state>
+		</configuration>
+		<disks>
+			<track_disk_cache>
+				<enabled type="boolean">true</enabled>
+			</track_disk_cache>
+		</disks>
+		<globalconfigid type="string">{BCF59489-0E15-497E-AD41-83359EEB1146}</globalconfigid>
+		<host>
+			<resource_control>
+				<cpu>
+					<host_processors type="integer">1</host_processors>
+				</cpu>
+			</resource_control>
+		</host>
+		<notes type="string" />
+		<shutdown>
+			<quit>
+				<action type="integer">0</action>
+			</quit>
+		</shutdown>
+		<sound>
+			<sound_adapter>
+				<enable type="boolean">true</enable>
+			</sound_adapter>
+		</sound>
+		<undo_drives>
+			<always type="boolean">false</always>
+			<default_action type="integer">1</default_action>
+			<enabled type="boolean">false</enabled>
+			<purposely_kept type="boolean">false</purposely_kept>
+			<use_default type="boolean">true</use_default>
+		</undo_drives>
+		<video>
+			<enhanced_mode type="boolean">true</enhanced_mode>
+			<full_screen type="boolean">false</full_screen>
+		</video>
+		<guest_os type="integer">8</guest_os>
+	</settings>
+	<virtual_machines>
+		<allow_packet_filtering type="boolean">false</allow_packet_filtering>
+		<allow_promiscuous_mode type="boolean">false</allow_promiscuous_mode>
+	</virtual_machines>
+	<multi_channel type="boolean">true</multi_channel>
+	<ui_options>
+		<guest_rail_enabled type="boolean">true</guest_rail_enabled>
+		<window_xpos type="integer">181</window_xpos>
+		<window_ypos type="integer">46</window_ypos>
+		<full_screen type="boolean">false</full_screen>
+		<resolution_height type="integer">864</resolution_height>
+		<resolution_width type="integer">1152</resolution_width>
+	</ui_options>
+</preferences>

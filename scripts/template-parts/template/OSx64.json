@@ -1,0 +1,96 @@
+{
+  "variables": {
+    "version": "0.1.0",
+    "shutdown_command": "cscript c:/windows/system32/slmgr.vbs /rearm & shutdown /s /f /d p:4:1",
+    "update": "true"
+  },
+  "builders": [
+    {
+      "type": "hyperv-iso",
+      "vm_name": "MSEdge - Win10",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
+      "ssh_username": "{{ user `ssh_user` }}",
+      "ssh_password": "{{ user `ssh_pwd` }}",
+      "ssh_wait_timeout": "10000s",
+      "ram_size_mb": 2048,
+      "disk_size": 40960,
+      "switch_name": "",
+      "shutdown_command": "{{ user `shutdown_command`}}",
+      "output_directory" : "..\\vms\\output\\MSEdge-Win10-HyperV"
+    },
+    {
+      "type": "virtualbox-iso",
+      "vm_name": "MSEdge - Win10",
+      "communicator": "ssh",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
+      "ssh_wait_timeout": "16h",
+      "ssh_username": "{{ user `ssh_user` }}",
+      "ssh_password": "{{ user `ssh_pwd` }}",
+      "guest_os_type": "Windows10_64",
+      "format" : "ova",
+      "guest_additions_mode" : "attach",
+      "output_directory" : "..\\vms\\output\\MSEdge-Win10-VirtualBox",
+      "headless": "{{ user `headless` }}",
+      "disk_size": 40960,
+      "vboxmanage": [
+        [
+          "modifyvm",
+          "{{.Name}}",
+          "--memory",
+          "2048"
+        ]
+      ],
+      "shutdown_command": "{{ user `shutdown_command`}}"
+    },
+    {
+      "type": "vmware-iso",
+      "vm_name": "MSEdge - Win10",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
+      "headless": true,
+      "ssh_username": "{{ user `ssh_user` }}",
+      "ssh_password": "{{ user `ssh_pwd` }}",
+      "ssh_wait_timeout": "16h",
+      "shutdown_command": "{{ user `shutdown_command`}}",
+      "guest_os_type": "windows9-64",
+      "boot_wait": "2m",
+      "tools_upload_flavor": "windows",
+      "output_directory" : "..\\vms\\output\\MSEdge-Win10-VMware-vmx",
+      "disk_size": 40960,
+      "vnc_port_min": 5900,
+      "vnc_port_max": 5980,
+       "vmx_data": {
+        "RemoteDisplay.vnc.enabled": "false",
+        "RemoteDisplay.vnc.port": "5900",
+        "memsize": "2048",
+        "numvcpus": "2",
+        "scsi0.virtualDev": "lsisas1068"
+      }
+    },
+    {
+      "type": "parallels-iso",
+      "vm_name": "MSEdge - Win10",
+      "communicator": "ssh",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum": "{{ user `iso_checksum` }}",
+      "iso_checksum_type": "sha1",
+      "parallels_tools_flavor": "win",
+      "parallels_tools_mode": "upload",
+      "ssh_username": "{{ user `ssh_user` }}",
+      "ssh_password": "{{ user `ssh_pwd` }}",
+      "ssh_wait_timeout": "16h",
+      "shutdown_command": "{{ user `shutdown_command`}}",
+      "output_directory" : "MSEdge-Win10-Parallels",
+      "guest_os_type": "win-10",
+      "prlctl": [
+        ["set", "{{.Name}}", "--memsize", "2048"],
+        ["set", "{{.Name}}", "--cpus", "2"]
+      ]     
+    }
+  ]
+}

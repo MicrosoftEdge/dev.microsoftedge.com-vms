@@ -1,0 +1,6 @@
+{
+  "variables": {
+    "ssh_user" : "IEUser",
+    "ssh_pwd" : "Passw0rd!"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "builders": [
+    {
+      "type": "hyperv-iso",
+      "floppy_files": [
+        "floppy/build.cfg",
+        "floppy/openssh/openssh.ps1",
+        "floppy/updates/win-updates.ps1",
+        "floppy/common/post-win-updates.ps1",
+        "floppy/common/finish-actions.ps1",
+        "floppy/updates/microsoft-updates.bat",
+        "floppy/common/preprovisioner.ps1",
+        "floppy/bginfo/Bginfo.exe",
+        "floppy/bginfo/install.vbs",
+        "floppy/bginfo/background.jpg",
+        "floppy/homepage/browser-homepage.ps1",
+        "floppy/winrm/start-winrm.ps1",
+        "floppy/winrm/config-winrm.cmd"
+      ]
+    },
+    {
+      "type": "virtualbox-iso",
+      "floppy_files": [
+        "floppy/build.cfg",
+        "floppy/openssh/openssh.ps1",
+        "floppy/updates/win-updates.ps1",
+        "floppy/common/post-win-updates.ps1",
+        "floppy/common/finish-actions.ps1",
+        "floppy/updates/microsoft-updates.bat",
+        "floppy/common/preprovisioner.ps1",
+        "floppy/bginfo/Bginfo.exe",
+        "floppy/bginfo/install.vbs",
+        "floppy/bginfo/background.jpg",
+        "floppy/guesttools/oracle-cert.cer",
+        "floppy/homepage/browser-homepage.ps1",
+        "floppy/winrm/start-winrm.ps1",
+        "floppy/winrm/config-winrm.cmd"
+      ]
+    },
+    {
+      "type": "vmware-iso",
+      "floppy_files": [
+        "floppy/build.cfg",
+        "floppy/openssh/openssh.ps1",
+        "floppy/updates/win-updates.ps1",
+        "floppy/common/post-win-updates.ps1",
+        "floppy/common/finish-actions.ps1",
+        "floppy/updates/microsoft-updates.bat",
+        "floppy/common/preprovisioner.ps1",
+        "floppy/bginfo/Bginfo.exe",
+        "floppy/bginfo/install.vbs",
+        "floppy/bginfo/background.jpg",
+        "floppy/homepage/browser-homepage.ps1",
+        "floppy/winrm/start-winrm.ps1",
+        "floppy/winrm/config-winrm.cmd"
+      ]
+    },
+    {
+      "type": "parallels-iso",
+      "floppy_files": [
+        "floppy/build.cfg",
+        "floppy/openssh/openssh.ps1",
+        "floppy/updates/win-updates.ps1",
+        "floppy/common/post-win-updates.ps1",
+        "floppy/common/finish-actions.ps1",
+        "floppy/updates/microsoft-updates.bat",
+        "floppy/common/preprovisioner.ps1",
+        "floppy/bginfo/Bginfo.exe",
+        "floppy/bginfo/install.vbs",
+        "floppy/bginfo/background.jpg",
+        "floppy/homepage/browser-homepage.ps1",
+        "floppy/winrm/start-winrm.ps1",
+        "floppy/winrm/config-winrm.cmd"
+      ]
+    }
+  ]
+}

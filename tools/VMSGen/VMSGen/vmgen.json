@@ -1,0 +1,85 @@
+{
+  "Build": "20150916",
+  "OutputPath": "E:\\ModernIE\\vms",
+  "VMS": {
+    "Windows": {
+      "VirtualBox": {
+        "IE9": [
+          "Win7"
+        ],
+        "IE10": [
+          "Win7"
+        ],
+        "IE11": [
+          "Win7",
+          "Win81"
+        ],
+        "MSEdge": [
+          "Win10",
+          "Win10_preview"
+        ]
+      },
+      "HyperV": {
+        "IE9": [
+          "Win7"
+        ],
+        "IE10": [
+          "Win7"
+        ],
+        "IE11": [
+          "Win7",
+          "Win81"
+        ],
+        "MSEdge": [
+          "Win10",
+          "Win10_preview"
+        ]
+      },
+      "VPC": {
+        "IE9": [
+          "Win7"
+        ],
+        "IE10": [
+          "Win7"
+        ],
+        "IE11": [
+          "Win7"
+        ]
+      },
+      "VMware": {
+        "IE9": [
+          "Win7"
+        ],
+        "IE10": [
+          "Win7"
+        ],
+        "IE11": [
+          "Win7",
+          "Win81"
+        ],
+        "MSEdge": [
+          "Win10",
+          "Win10_preview"
+        ]
+      }
+    },
+    "Mac": {
+      "Parallels": {
+        "IE9": [
+          "Win7"
+        ],
+        "IE10": [
+          "Win7"
+        ],
+        "IE11": [
+          "Win7",
+          "Win81"
+        ],
+        "MSEdge": [
+          "Win10",
+          "Win10_preview"
+        ]
+      }
+    }
+  }
+}
