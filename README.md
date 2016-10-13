@@ -43,7 +43,7 @@ Although we are working on updating the project to work with that PR, in the mea
 
 #### VirtualBox support
 
-We automatically install the Guest Extensions but to do that silently the installation needs to add the oracle certificate to the list of trusted certs in the guest OS. Roght now the process we follow is the one describe in [this guide](http://www.catonrug.net/2013/03/virtualbox-silent-install-store-oracle-certificate.html). You will have to place that `.cer` file in `scripts\floppy\guesttools\oracle-cert.cer`. In the near future we plan to update the process to follow the guidance of the [official manual](https://www.virtualbox.org/manual/ch04.html#additions-windows) in the section **4.2.1.3. Unattended Installation**.
+We automatically install the Guest Extensions, but to do that silently the installation needs to add the Oracle certificate to the list of trusted certs in the guest OS. Right now we suggest that you follow the process described in [this guide](http://www.catonrug.net/2013/03/virtualbox-silent-install-store-oracle-certificate.html). You will have to place that `.cer` file in `scripts\floppy\guesttools\oracle-cert.cer`. In the near future we plan to update the process to follow the guidance of the [official manual](https://www.virtualbox.org/manual/ch04.html#additions-windows) in the section **4.2.1.3. Unattended Installation**.
 
 ### Set PowerShell Execution Policy
 Set the execution policy by typing this into your powershell window:
