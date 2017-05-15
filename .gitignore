@@ -4,7 +4,7 @@
 *.md5.txt
 *.zip.00?
 !scripts/**/*.exe
-!bin/**/*.exe
+bin/
 # Packer builder outputs
 outputs/
 output-hyperv-iso/
@@ -21,10 +21,12 @@ vms/output/
 tools/VMSGen/VMSGen/obj/
 tools/VMSGen/VMSGen/bin/
 tools/VMSGen/packages/
+tools/PackerMerge/packages
 tools/PackerMerge/PackerMerge/bin/
 tools/PackerMerge/PackerMerge/obj/
 tools/PackerMerge/.vs/config/applicationhost.config
 tools/VMSGen/.vs/config/applicationhost.config
+
 
 *.suo
 bin/*.vshost.exe.*
