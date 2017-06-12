@@ -3,6 +3,7 @@
     {
       "type": "hyperv-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "floppy/build.cfg",
         "floppy/openssh/openssh.ps1",
         "floppy/updates/win-updates.ps1",
@@ -21,6 +22,7 @@
     {
       "type": "virtualbox-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "floppy/build.cfg",
         "floppy/openssh/openssh.ps1",
         "floppy/updates/win-updates.ps1",
@@ -40,6 +42,7 @@
     {
       "type": "vmware-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "floppy/build.cfg",
         "floppy/openssh/openssh.ps1",
         "floppy/updates/win-updates.ps1",
@@ -58,6 +61,7 @@
     {
       "type": "parallels-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "floppy/build.cfg",
         "floppy/openssh/openssh.ps1",
         "floppy/updates/win-updates.ps1",

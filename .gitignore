@@ -16,6 +16,7 @@ output-parallels-pvm/
 *.box
 generated/
 vms/output/
+scripts/template-output/
 
 *.user
 tools/VMSGen/VMSGen/obj/

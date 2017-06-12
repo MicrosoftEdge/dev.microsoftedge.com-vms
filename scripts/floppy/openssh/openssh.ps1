@@ -122,7 +122,7 @@ function DownloadSSH () {
   netsh advfirewall firewall add rule name="ssh" dir=in action=allow protocol=TCP localport=22
 
   # Enable UAC
-  New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 1 -Force
+  #New-ItemProperty -Path HKLM:Software\Microsoft\Windows\CurrentVersion\policies\system -Name EnableLUA -PropertyType DWord -Value 1 -Force
 
   $RegistryKey = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce"
   $RegistryEntry = "FinishInstallActions"
@@ -136,9 +136,9 @@ function DownloadSSH () {
 function OpenSSH () {
   #Start-Service "OpenSSHd"
 
-  If ($software -eq "HyperV" -or $software -eq "VPC") {
-    Stop-Computer -Force
-  }
+#  If ($software -eq "HyperV" -or $software -eq "VPC") {
+#    Stop-Computer -Force
+#  }
 }
 
 If ($Finish -eq $true) {
