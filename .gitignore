@@ -27,7 +27,7 @@ tools/PackerMerge/PackerMerge/bin/
 tools/PackerMerge/PackerMerge/obj/
 tools/PackerMerge/.vs/config/applicationhost.config
 tools/VMSGen/.vs/config/applicationhost.config
-
+tools/VMSConfigGen/VMSConfigGen/obj
 
 *.suo
 bin/*.vshost.exe.*
