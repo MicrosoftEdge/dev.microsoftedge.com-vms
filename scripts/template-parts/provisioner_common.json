@@ -6,7 +6,9 @@
       "execute_command": "{{.Vars}} cmd /c C:/Windows/Temp/script.bat",
       "scripts": [
         "./provisioners/vm-guest-tools.bat",
-        "./provisioners/compact.bat"
+        "./provisioners/compact.bat",
+        "./provisioners/restore-uac.bat",
+        "./provisioners/disable-autologon.bat"        
       ]
     }
   ]
