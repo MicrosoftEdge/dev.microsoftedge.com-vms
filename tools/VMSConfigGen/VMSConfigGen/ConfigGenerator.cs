@@ -10,7 +10,7 @@ namespace VMSConfigGen
     {                                                                                
         Dictionary<Levels, List<string>> _selectedOptions;
         
-        public ConfigGenerator(Dictionary<string, List<string>> parameters)
+        public ConfigGenerator(Dictionary<Levels, List<string>> parameters)
         {
             _selectedOptions = CreateDictionaryWithAllTheOptionsSelected(parameters);
         }             
@@ -55,13 +55,12 @@ namespace VMSConfigGen
             }            
         }
 
-        private Dictionary<Levels, List<string>> CreateDictionaryWithAllTheOptionsSelected(Dictionary<string, List<string>> parameters)
+        private Dictionary<Levels, List<string>> CreateDictionaryWithAllTheOptionsSelected(Dictionary<Levels, List<string>> parameters)
         {
             var result = new Dictionary<Levels, List<string>>();
-            foreach (var level in Enum.GetValues(typeof(Levels)))
+            foreach (Levels level in Enum.GetValues(typeof(Levels)))
             {
-                var name = level.ToString();
-                var content = parameters.ContainsKey(name) ? parameters[name] : Parameters.AcceptedParameters[name];
+                var content = parameters.ContainsKey(level) ? parameters[level] : Parameters.AcceptedParameters[level];
 
                 result.Add((Levels)level, content);
             }            

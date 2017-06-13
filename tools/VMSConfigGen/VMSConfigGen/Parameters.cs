@@ -7,22 +7,22 @@ namespace VMSConfigGen
 {
     internal class Parameters
     {              
-        public static Dictionary<string, List<string>> AcceptedParameters = new Dictionary<string, List<string>>
+        public static Dictionary<Levels, List<string>> AcceptedParameters = new Dictionary<Levels, List<string>>
         {            
-            { "OS", new List<string> (Enum.GetNames(typeof(OSs)))},
-            { "VM", new List<string> (Enum.GetNames(typeof(VMs)))},
-            { "Browser", new List<string> (Enum.GetNames(typeof(Browsers)))},
-            { "WinVersion", new List<string> (Enum.GetNames(typeof(WinVersions)))}
+            { Levels.OS, new List<string> (Enum.GetNames(typeof(OSs)))},
+            { Levels.VM, new List<string> (Enum.GetNames(typeof(VMs)))},
+            { Levels.Browser, new List<string> (Enum.GetNames(typeof(Browsers)))},
+            { Levels.WinVersion, new List<string> (Enum.GetNames(typeof(WinVersions)))}
         };              
 
-        public static (bool success, Dictionary<string, List<string>> output, List<string> errors) TryToConvertToParameters(string[] parameters)
+        public static (bool success, Dictionary<Levels, List<string>> output, List<string> errors) TryToConvertToParameters(string[] parameters)
         {
             var wrongParameters = new List<string>();
-            var output = new Dictionary<string, List<string>>();
+            var output = new Dictionary<Levels, List<string>>();
 ;            foreach (var param in parameters)
             {
                 bool paramFound = false;                
-                foreach (var key in AcceptedParameters.Keys)
+                foreach (Levels key in AcceptedParameters.Keys)
                 {
                     var element = AcceptedParameters[key].Find(x => x.ToLower() == param.ToLower());
                     if (!string.IsNullOrEmpty(element))
