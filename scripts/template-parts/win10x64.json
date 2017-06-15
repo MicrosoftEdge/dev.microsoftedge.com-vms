@@ -69,7 +69,8 @@
         "RemoteDisplay.vnc.port": "5900",
         "memsize": "4096",
         "numvcpus": "2",
-        "scsi0.virtualDev": "lsisas1068"
+        "scsi0.virtualDev": "lsisas1068",
+        "virtualHW.version": "12"
       }
     },
     {
