@@ -30,8 +30,8 @@ namespace VMSConfigGen
     enum VMs
     {
         HyperV,
-        VBox,
-        VMWare,
+        VirtualBox,
+        VMware,
         Parallels,
         VPC
     }
@@ -55,7 +55,7 @@ namespace VMSConfigGen
 
         public static readonly bool[,] VMRules =
             {
-               //HyperV, VBox, VMWare, Parallels, VPC
+               //HyperV, VirtualBox, VMware, Parallels, VPC
                 {true, true, true,false, true }, //Windows
                 {false, true, true,true, false}  // Mac
         };
