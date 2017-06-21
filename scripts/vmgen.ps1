@@ -32,6 +32,7 @@ param (
   [switch]$Download = $False,
   [switch]$OnlyUpload = $False,
   [switch]$GenerateJSON = $True,
+  [switch]$KeepOutput = $False,
   [int]$Instance = 1
 )
 
@@ -94,6 +95,7 @@ function Create-LockFile ($vms) {
                         $myObject2 | Add-Member -type NoteProperty -name Windows -Value $winVersion
                         $myObject2 | Add-Member -type NoteProperty -name Generated -Value $False
                         $myObject2 | Add-Member -type NoteProperty -name Failed -Value $False
+                        $myObject2 | Add-Member -type NoteProperty -name Retried -Value $False
                         $myObject2 | Add-Member -type NoteProperty -name Start -Value $null
                         $myObject2 | Add-Member -type NoteProperty -name End -Value $null
 
@@ -287,8 +289,10 @@ function Compress-SingleAndMultipart ($zipFolder, $zipName, $source) {
     Generate-Hashes $zipFolder $md5FolderPath
     LogWrite "MD5 File Hashes generated in $md5FolderPath."
 
-    LogWrite "Removing output files..."
-    Remove-Item $source -Recurse -Force
+    if($TestMode -eq $False){
+        LogWrite "Removing output files..."
+        Remove-Item $source -Recurse -Force  
+    }
 }
 
 function Upload() {
@@ -315,11 +319,16 @@ function Upload() {
 function Remove-OutputFiles () {
     $outputPath = $global:Config.OutputPath
 
-    Remove-Item $outputPath\VMBuild_$global:buildId -recurse -Force
-    LogWrite "Removed output files from $outputPath\VMBuild_$global:buildId"
+    if($KeepOutput -eq $False){
+        Remove-Item $outputPath\VMBuild_$global:buildId -recurse -Force
+        LogWrite "Removed output files from $outputPath\VMBuild_$global:buildId"
 
-    Remove-Item $outputPath\md5\VMBuild_$global:buildId -recurse -Force
-    LogWrite "Removed output files from $outputPath\md5\VMBuild_$global:buildId"
+        Remove-Item $outputPath\md5\VMBuild_$global:buildId -recurse -Force
+        LogWrite "Removed output files from $outputPath\md5\VMBuild_$global:buildId"
+
+    } else {
+        LogWrite "Skipping remove output files from $outputPath\md5\VMBuild_$global:buildId"
+    }
 }
 
 function Check-RestartEnableHyperV() {
@@ -344,6 +353,14 @@ function Check-RestartDisableHyperV() {
         Restart-Computer -Force
         Exit
     }
+}
+
+function Restart-System(){
+    Create-RestartRegistryEntry
+    LogWrite "Restarting in 10s..."
+    Start-Sleep -s 10    
+    Restart-Computer -Force
+    Exit
 }
 
 function Clear-Temp () {
@@ -418,12 +435,17 @@ function Start-GenerationProcess {
 
         $item = $_
 
-        If ($_.Generated -eq $False) {
+        If ($_.Generated -eq $False -and $_.Retried -eq $False) {                        
 
             $software = $_.Software
             $windows = $_.Windows
             $browser = $_.Browser
-            $os = $_.OS
+            $os = $_.OS            
+
+            if ($item.Failed -eq $True -and $item.Retried -eq $False) {                    
+                $item.Retried = $True
+                LogWrite "Retrying $software $windows $browser"
+            }
 
             $item.Start = Get-Date -Format G
 
@@ -456,8 +478,13 @@ function Start-GenerationProcess {
             }
             catch
             {
-                $item.Failed = $True
                 LogWrite "Error: $_"
+                $item.Failed = $True
+                if ($item.Retried -eq $False) {                                       
+                    LogWrite "Order retry for $software $windows $browser. Force restart before initiating process." 
+                    $lock | ConvertTo-Json | Out-File "$global:Path\vmgen.json.lock"                   
+                    Restart-System
+                }                                                                                
             }
 
             $item.End = Get-Date -Format G
