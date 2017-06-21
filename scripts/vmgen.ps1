@@ -551,7 +551,9 @@ If ($Download -eq $True) {
     Download-ISOs
 }
 
-Start-BuildPackerTemplates
+if($Continue -eq $False ){    
+    Start-BuildPackerTemplates
+}
 
 If ($Build -eq $True) {
     Start-GenerationProcess
