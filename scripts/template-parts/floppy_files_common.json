@@ -33,7 +33,6 @@
         "floppy/bginfo/Bginfo.exe",
         "floppy/bginfo/install.vbs",
         "floppy/bginfo/background.jpg",
-        "floppy/guesttools/oracle-cert.cer",
         "floppy/homepage/browser-homepage.ps1",
         "floppy/winrm/start-winrm.ps1",
         "floppy/winrm/config-winrm.cmd"
