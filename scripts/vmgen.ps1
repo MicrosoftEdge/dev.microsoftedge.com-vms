@@ -569,6 +569,26 @@ function Download-ISOs () {
     & ..\bin\AzCopy\AzCopy.exe /Source:$url/iso /Dest:iso /SourceKey:$key /Y /S
 }
 
+function Update-Mac() {
+    $lock = (Get-Content "$global:Path\vmgen.json.lock" -Raw) | ConvertFrom-Json
+    $MacImages = $lock | where { $_.OS -eq "Mac"} | Measure-Object
+    if($MacImages.Count -gt 0){
+        LogWrite "Mac images in the generation list. Updating files in the Mac machine..."
+
+        $networkPath = $global:Config.Mac.NetworkPath
+        $SSHUser = $global:Config.Mac.SSH_User
+        $SSHPassword = $global:Config.Mac.SSH_Password
+
+        If (!(Test-Path M:))
+        {
+            Invoke-Expression "net use M: $networkPath /USER:$SSHUser $SSHPassword"
+            LogWrite "Drive M mapped to $networkPath"
+        }   
+
+        ROBOCOPY ..\scripts M:\scripts /MIR /R:5 /W:10 /xo /fft
+    }
+}
+
 If ($Continue -eq $False -and (Test-Path $LogFile)) {
     Clear-Content $Logfile
 }
@@ -581,7 +601,8 @@ If ($Download -eq $True) {
 }
 
 if($Continue -eq $False ){    
-    Start-BuildPackerTemplates
+    #Start-BuildPackerTemplates
+    Update-Mac
 }
 
 If ($Build -eq $True) {

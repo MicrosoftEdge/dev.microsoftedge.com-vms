@@ -118,6 +118,11 @@ Turn Apple File Sharing on
 ```
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
 ```
+Activate SMB
+
+```
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.smbd.plist
+```
 
 Share Repository folder
 
