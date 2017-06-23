@@ -495,10 +495,7 @@ function Start-GenerationProcess {
 
     LogWrite "Process finished."
 
-    Send-NotificationEmail
-
     Clear-Temp
-
 }
 
 function Generate-SofwareListJson () {
@@ -507,7 +504,7 @@ function Generate-SofwareListJson () {
 }
 
 function Send-NotificationEmail () {
-
+    
     $smtp = $global:Config.Mail.SMTP
     $from = $global:Config.Mail.From
     $to = $global:Config.Mail.To
@@ -521,6 +518,8 @@ function Send-NotificationEmail () {
 
     $error = 0;
     $total = 0;
+
+    $lock = (Get-Content "$global:Path\vmgen.json.lock" -Raw) | ConvertFrom-Json
 
     $list = ($lock | ForEach-Object{
         $total++
@@ -554,7 +553,10 @@ function Send-NotificationEmail () {
     $secpasswd = ConvertTo-SecureString $password -AsPlainText -Force
     $mycreds = New-Object System.Management.Automation.PSCredential ($user, $secpasswd)
 
-    Send-mailmessage -to $to -from $from -subject $subject -credential $mycreds -useSSL -body $body -BodyAsHtml -Attachments $Logfile -smtpServer $smtp
+    $outputPath = $global:Config.OutputPath
+    $vmsFile = "$outputPath\vms.json"
+
+    Send-mailmessage -to $to -from $from -subject $subject -credential $mycreds -useSSL -body $body -BodyAsHtml -Attachments $Logfile,$vmsFile -smtpServer $smtp
 
     LogWrite "Email sended to $to with '$subjectstatus' status"
 }
@@ -588,5 +590,6 @@ If ($Build -eq $True) {
 
 If ($GenerateJSON -eq $True -or $Build -eq $True) {
     Generate-SofwareListJson
+    Send-NotificationEmail
     Remove-OutputFiles
 }
