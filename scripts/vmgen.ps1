@@ -601,7 +601,7 @@ If ($Download -eq $True) {
 }
 
 if($Continue -eq $False ){    
-    #Start-BuildPackerTemplates
+    Start-BuildPackerTemplates
     Update-Mac
 }
 
