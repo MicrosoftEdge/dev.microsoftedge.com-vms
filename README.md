@@ -26,7 +26,7 @@ Currently this process only works on Windows 8.1 machines.
 For an automatic installation of the required software you can use the script `.\scripts\apps\winappinstaller.ps1` It uses Chocolatey for installing the programs in the previous list. It is not recommended to use the script in machines that have already some of the programs installed manually. The purpose of the script is saving time in the installation in clean machines.
 
 ### Automatic installation in Mac computers
-Although in Mac only Packer and Parallels are required, you can install them automatically using the script `.\scripts\apps\macappinstaller.sh`. The script uses Homebrew to install the apps. Parallels will require in addition of the installation the registration of a valid key.
+Although in Mac only Packer and Parallels are required, you can install them automatically using the script `.\scripts\apps\macappinstaller.sh`. The script uses Homebrew to install the apps. Parallels will require in addition of the installation the registration of a valid key. In case packer is not installing correctly write in the terminal `brew install packer` to retry the installation.
 
 ## Preparing the Windows build environment
 
