@@ -137,10 +137,12 @@ sudo sharing -a /Users/admin/dev.microsoftedge.com-vms/
 ```
 
 ### Install Packer
+(Note: this step is not necessary if the script `.\scripts\apps\macappinstaller.sh` has been executed.)
 
 Unzip Packer files to /Users/packer
 
 ### Set environment variable on OS X
+(Note: this step is not necessary if the script `.\scripts\apps\macappinstaller.sh` has been executed.)
 
 * Open up Terminal.
 * Run the following command:
@@ -159,6 +161,8 @@ sudo nano /etc/paths
 The Apple Mac OS X operating system has SSH installed by default but the SSH daemon is not enabled. This means vmgen script can't login remotely or do remote copies until you enable it.
 
 To enable it, go to "System Preferences". Under "Internet & Networking" there is a "Sharing" icon. Run that. In the list that appears, check the "Remote Login" option.
+
+**Important**: once SSH is enabled in the Mac, we have to connect to it manually by Putty SSH from the Windows computer prepared to initiate the process. This way the Mac is recognized by the Putty when the process is executed. If we do not register the Mac as an accepted connection, the SSH connection will show this error in the generation process `The server's host key is not cached in the registry. You have no guarantee that the server is the computer you think it is. The server's rsa2 key finger (...) Connection abandoned.`    
 
 ## Download Windows ISOs
 
