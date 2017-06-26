@@ -19,5 +19,13 @@ New-Item $Destination -Type Directory
 Copy-Item $AzPath\*  $Destination
 # Putty
 cinst putty.install -y
+#move the putty binaries to the bin folder
+$PuttyPath = ${Env:ProgramFiles} + "\PuTTY"
+$Destination = "..\..\bin\putty"
+if(Test-Path $Destination){
+    Remove-Item $Destination -recurse
+}
+New-Item $Destination -Type Directory
+Copy-Item $PuttyPath\*  $Destination
 # Visual Studio 2015 Community
 cinst visualstudio2015community -y
