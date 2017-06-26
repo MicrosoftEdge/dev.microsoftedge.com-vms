@@ -12,7 +12,7 @@ Currently this process only works on Windows 8.1 machines.
 
 ## Software Requirements
 * Windows 8.1 (working on a solution that works for Windows 10)
-* [Packer 0.8.6 For Windows and Mac](https://packer.io/downloads.html) (It's an old version, we know)
+* [Packer 1.0.2 For Windows and Mac](https://packer.io/downloads.html) 
 * [VirtualBox 5.0.2 for Windows hosts](https://www.virtualbox.org/wiki/Downloads)
 * [VMware Workstation](http://www.vmware.com/products/workstation)
 * Hyper-V
@@ -21,6 +21,12 @@ Currently this process only works on Windows 8.1 machines.
 * [AzCopy](http://aka.ms/downloadazcopy)
 * [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 * [Visual Studio Community](https://www.visualstudio.com/downloads/)
+
+### Automatic installation in Windows computers
+For an automatic installation of the required software you can use the script `.\scripts\apps\winappinstaller.ps1` It uses Chocolatey for installing the programs in the previous list. It is not recommended to use the script in machines that have already some of the programs installed manually. The purpose of the script is saving time in the installation in clean machines.
+
+### Automatic installation in Mac computers
+Although in Mac only Packer and Parallels are required, you can install them automatically using the script `.\scripts\apps\macappinstaller.sh`. The script uses Homebrew to install the apps. Parallels will require in addition of the installation the registration of a valid key.
 
 ## Preparing the Windows build environment
 
