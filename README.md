@@ -265,6 +265,15 @@ To upload the generated files after a build without regenerate de VMs, we need t
 
 A JSON specific version will be generated in OutputPath. If you want your result to be merge with another file, place it in the same folder with the name vms.json.
 
+### Renaming the os version in the output JSON
+If you want to rename the os versions inside the OutputJSON you can do it manually or use the `scripts\vmsrename.ps1`. For instance if we want to change the value Win10 used in the generation process for an explicit name with build and architecture:  
+
+```
+.\vmsrename.ps1 "Win10" "Win10 (x86) Build 6307"
+```
+
+The input file `vms.json` must be in the same folder as the script, and the output file will be `vms_renamed.json`.
+
 ## Generate a new OS template
 
 To generate a new platform perform the following steps:
