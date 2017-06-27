@@ -177,7 +177,6 @@ function Generate-Mac ($software, $windows, $browser, $os) {
        $macsshuser = $global:Config.Mac.SSH_User
        $macsshpass = $global:Config.Mac.SSH_Password
        $macRepoPath = $global:Config.Mac.RepoPath
-       $macPackerPath = $global:Config.Mac.PackerPath
        LogWrite "Starting SSH session for packer for Mac $software $windows $browser..."
 
        $data = $null
@@ -186,7 +185,6 @@ function Generate-Mac ($software, $windows, $browser, $os) {
        (Get-Content .\template-parts\parallels-command.template) |
        Foreach-Object {$_ -replace '{{template}}', $template}  |
        Foreach-Object {$_ -replace '{{path_repo}}', $macRepoPath}  |
-       Foreach-Object {$_ -replace '{{path_packer}}', $macPackerPath}  |
        Out-File parallels-command.txt -Encoding ascii
 
        Invoke-Expression "..\bin\putty\plink -ssh $macsshuser@$macip -pw $macsshpass -batch -m parallels-command.txt | Tee-Object -Variable data"

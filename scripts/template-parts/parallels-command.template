@@ -1,3 +1,2 @@
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:{{path_packer}}
 cd {{path_repo}}/scripts
-{{path_packer}}/packer build -only=parallels-iso -color=false -force ./template-output/{{template}}
+packer build -only=parallels-iso -color=false -force ./template-output/{{template}}

@@ -196,8 +196,7 @@ This script requires a configuration file called `vmgen.json` located in the sam
     "SSH_User": "admin",
     "SSH_Password": "password",
     "NetworkPath": "\\\\MAC\\microsoftedge-vms",
-    "RepoPath" : "/Users/admin/dev.microsoftedge.com-vms",
-    "PackerPath" : "/Users/admin/packer"
+    "RepoPath" : "/Users/admin/dev.microsoftedge.com-vms"
   },
   "Mail": {
     "SMTP": "smtp.office365.com",
