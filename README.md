@@ -205,6 +205,10 @@ This script requires a configuration file called `vmgen.json` located in the sam
     "User": "user@user.com",
     "Password": ""
   },
+  "OsRenaming": {
+    "Win10": "Win10 (x64) Build xxxx",
+    "Win81": "Win81 (x86) Build yyyy"
+	},
   "VMS": {
     "Windows": {
       "HyperV": {
@@ -247,6 +251,7 @@ This script requires a configuration file called `vmgen.json` located in the sam
 * AzureStorage - Contains the Url and the Key of de Azure Storage Account to upload de output files.
 * Mac - Contains IP, SSH User & password, and a shared path.
 * Mail - SMTP configuration to send emails to the appropriate people
+* OsRenaming (optional) - Indicates the final names desired in the output JSON for the os versions. Let's say that periodically we execute the process for the Win10 and we want in the output JSON the specific build version "Win10 (x64) build 2345". This renamed version of the output JSON is the one sent by mail. If a rename is not desired simply remove this section.
 * VMS - Object struct to set the dev.microsoftedge.com Virtual Machines to be generated. The valid values for each level are as follows:
 
   * **First Level** - Windows, Mac
@@ -266,7 +271,10 @@ To upload the generated files after a build without regenerate de VMs, we need t
 A JSON specific version will be generated in OutputPath. If you want your result to be merge with another file, place it in the same folder with the name vms.json.
 
 ### Renaming the os version in the output JSON
-If you want to rename the os versions inside the OutputJSON you can do it manually or use the `scripts\vmsrename.ps1`. For instance if we want to change the value Win10 used in the generation process for an explicit name with build and architecture:  
+
+**Automatic renaming**: to rename the output JSON automatically in the process, just add the `OsRenaming` section in the vmgen file. When the generation process is executed, a copy of the output JSON with the renaming will be stored in the output path, inside the notification folder. This version is the one that will be sent by email to the configured mail receiver. 
+
+**Manual renaming**: if you want to rename the output JSON manually you can use the `scripts\vmsrename.ps1`. For instance if we want to change the value Win10 used in the generation process for an explicit name with build and architecture:  
 
 ```
 .\vmsrename.ps1 "Win10" "Win10 (x86) Build 6307"

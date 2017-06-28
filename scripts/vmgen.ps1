@@ -552,11 +552,39 @@ function Send-NotificationEmail () {
     $mycreds = New-Object System.Management.Automation.PSCredential ($user, $secpasswd)
 
     $outputPath = $global:Config.OutputPath
-    $vmsFile = "$outputPath\vms.json"
+    $vmsFile = "$outputPath\notification\vms.json"
 
     Send-mailmessage -to $to -from $from -subject $subject -credential $mycreds -useSSL -body $body -BodyAsHtml -Attachments $Logfile,$vmsFile -smtpServer $smtp
 
     LogWrite "Email sended to $to with '$subjectstatus' status"
+}
+
+function Prepare-SofwareListJsonToBeNotified () {
+    $outputPath = $global:Config.OutputPath
+
+    if (-Not (Test-Path $outputPath\notification)) {
+            New-Item -ItemType Directory -Force -Path $outputPath\notification
+        }
+
+    if(Get-Member -inputobject $global:Config -name "OsRenaming" -Membertype Properties){
+        $osRenames = $global:Config.OsRenaming.PSObject.Properties
+        
+        $vmsOutputList = (Get-Content "$outputPath\vms.json" -Raw) | ConvertFrom-Json
+
+        foreach ($_ in $osRenames) {            
+            foreach ($software in $vmsOutputList.softwareList) {
+                foreach ($vms in $software.vms) {
+                    if($vms.osVersion -eq $_.Name){
+                        $vms.osVersion = $_.Value
+                    }
+                }
+            }
+        }        
+        $vmsOutputList | ConvertTo-Json -depth 100 | Out-File "$outputPath\notification\vms.json"
+
+    } else {
+        Copy-Item $outputPath\vms.json $outputPath\notification
+    } 
 }
 
 function Download-ISOs () {
@@ -609,6 +637,7 @@ If ($Build -eq $True) {
 
 If ($GenerateJSON -eq $True -or $Build -eq $True) {
     Generate-SofwareListJson
+    Prepare-SofwareListJsonToBeNotified
     Send-NotificationEmail
     Remove-OutputFiles
 }
