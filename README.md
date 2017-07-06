@@ -12,7 +12,7 @@ Currently this process only works on Windows 8.1 machines.
 
 ## Software Requirements
 * Windows 8.1 (working on a solution that works for Windows 10)
-* [Packer 0.8.6 For Windows and Mac](https://packer.io/downloads.html) (It's an old version, we know)
+* [Packer 1.0.2 For Windows and Mac](https://packer.io/downloads.html) 
 * [VirtualBox 5.0.2 for Windows hosts](https://www.virtualbox.org/wiki/Downloads)
 * [VMware Workstation](http://www.vmware.com/products/workstation)
 * Hyper-V
@@ -21,6 +21,12 @@ Currently this process only works on Windows 8.1 machines.
 * [AzCopy](http://aka.ms/downloadazcopy)
 * [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)
 * [Visual Studio Community](https://www.visualstudio.com/downloads/)
+
+### Automatic installation in Windows computers
+For an automatic installation of the required software you can use the script `.\scripts\apps\winappinstaller.ps1` It uses Chocolatey for installing the programs in the previous list. It is not recommended to use the script in machines that have already some of the programs installed manually. The purpose of the script is saving time in the installation in clean machines.
+
+### Automatic installation in Mac computers
+Although in Mac only Packer and Parallels are required, you can install them automatically using the script `.\scripts\apps\macappinstaller.sh`. The script uses Homebrew to install the apps. Parallels will require in addition of the installation the registration of a valid key. In case packer is not installing correctly write in the terminal `brew install packer` to retry the installation.
 
 ## Preparing the Windows build environment
 
@@ -118,6 +124,11 @@ Turn Apple File Sharing on
 ```
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.AppleFileServer.plist
 ```
+Activate SMB
+
+```
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.smbd.plist
+```
 
 Share Repository folder
 
@@ -126,10 +137,12 @@ sudo sharing -a /Users/admin/dev.microsoftedge.com-vms/
 ```
 
 ### Install Packer
+(Note: this step is not necessary if the script `.\scripts\apps\macappinstaller.sh` has been executed.)
 
 Unzip Packer files to /Users/packer
 
 ### Set environment variable on OS X
+(Note: this step is not necessary if the script `.\scripts\apps\macappinstaller.sh` has been executed.)
 
 * Open up Terminal.
 * Run the following command:
@@ -148,6 +161,8 @@ sudo nano /etc/paths
 The Apple Mac OS X operating system has SSH installed by default but the SSH daemon is not enabled. This means vmgen script can't login remotely or do remote copies until you enable it.
 
 To enable it, go to "System Preferences". Under "Internet & Networking" there is a "Sharing" icon. Run that. In the list that appears, check the "Remote Login" option.
+
+**Important**: once SSH is enabled in the Mac, we have to connect to it manually by Putty SSH from the Windows computer prepared to initiate the process. This way the Mac is recognized by the Putty when the process is executed. If we do not register the Mac as an accepted connection, the SSH connection will show this error in the generation process `The server's host key is not cached in the registry. You have no guarantee that the server is the computer you think it is. The server's rsa2 key finger (...) Connection abandoned.`    
 
 ## Download Windows ISOs
 
@@ -181,8 +196,7 @@ This script requires a configuration file called `vmgen.json` located in the sam
     "SSH_User": "admin",
     "SSH_Password": "password",
     "NetworkPath": "\\\\MAC\\microsoftedge-vms",
-    "RepoPath" : "/Users/admin/dev.microsoftedge.com-vms",
-    "PackerPath" : "/Users/admin/packer"
+    "RepoPath" : "/Users/admin/dev.microsoftedge.com-vms"
   },
   "Mail": {
     "SMTP": "smtp.office365.com",
@@ -191,6 +205,10 @@ This script requires a configuration file called `vmgen.json` located in the sam
     "User": "user@user.com",
     "Password": ""
   },
+  "OsRenaming": {
+    "Win10": "Win10 (x64) Build xxxx",
+    "Win81": "Win81 (x86) Build yyyy"
+	},
   "VMS": {
     "Windows": {
       "HyperV": {
@@ -233,6 +251,7 @@ This script requires a configuration file called `vmgen.json` located in the sam
 * AzureStorage - Contains the Url and the Key of de Azure Storage Account to upload de output files.
 * Mac - Contains IP, SSH User & password, and a shared path.
 * Mail - SMTP configuration to send emails to the appropriate people
+* OsRenaming (optional) - Indicates the final names desired in the output JSON for the os versions. Let's say that periodically we execute the process for the Win10 and we want in the output JSON the specific build version "Win10 (x64) build 2345". This renamed version of the output JSON is the one sent by mail. If a rename is not desired simply remove this section.
 * VMS - Object struct to set the dev.microsoftedge.com Virtual Machines to be generated. The valid values for each level are as follows:
 
   * **First Level** - Windows, Mac
@@ -250,6 +269,18 @@ To upload the generated files after a build without regenerate de VMs, we need t
 ## Output JSON
 
 A JSON specific version will be generated in OutputPath. If you want your result to be merge with another file, place it in the same folder with the name vms.json.
+
+### Renaming the os version in the output JSON
+
+**Automatic renaming**: to rename the output JSON automatically in the process, just add the `OsRenaming` section in the vmgen file. When the generation process is executed, a copy of the output JSON with the renaming will be stored in the output path, inside the notification folder. This version is the one that will be sent by email to the configured mail receiver. 
+
+**Manual renaming**: if you want to rename the output JSON manually you can use the `scripts\vmsrename.ps1`. For instance if we want to change the value Win10 used in the generation process for an explicit name with build and architecture:  
+
+```
+.\vmsrename.ps1 "Win10" "Win10 (x86) Build 6307"
+```
+
+The input file `vms.json` must be in the same folder as the script, and the output file will be `vms_renamed.json`.
 
 ## Generate a new OS template
 

@@ -101,14 +101,12 @@ namespace VMSGen
                     {
                         var softListLeftVMS = softListLeft.VMS.FirstOrDefault(x => x.Version == item.Version && x.OSVersion == item.OSVersion);
 
-                        if (softListLeftVMS == null)
+                        if (softListLeftVMS != null)
                         {
-                            softListLeft.VMS.Add(item);
+                            softListLeft.VMS.Remove(softListLeftVMS);
                         }
-                        else
-                        {
-                            softListLeftVMS = item;
-                        }
+
+                        softListLeft.VMS.Add(item);
                     }
                 }
             }
