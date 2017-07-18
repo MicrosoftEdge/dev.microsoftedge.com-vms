@@ -1,2 +1,0 @@
-cd /Users/eiximenis/dev.microsoftedge.com-vms/scripts
-packer build -only=parallels-iso -color=false -force ./template-output/MSEdge-Win10.json

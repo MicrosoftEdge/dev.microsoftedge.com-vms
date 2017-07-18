@@ -38,4 +38,5 @@ scripts/vmgen.json
 scripts/floppy/build.cfg
 scripts/vmgen.log
 scripts/vmgen.cfg
+scripts/parallels-command.txt
 *.user
