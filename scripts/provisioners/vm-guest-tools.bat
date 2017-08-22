@@ -74,7 +74,7 @@ goto :done
 :parallels
 if exist "C:\Users\IEUser\prl-tools-win.iso" (
 	move /Y C:\Users\IEUser\prl-tools-win.iso C:\Windows\Temp
-	cmd /C "C:\Program Files ^(x86^)\7-Zip\7z.exe" x C:\Windows\Temp\prl-tools-win.iso -oC:\Windows\Temp\parallels
+	cmd /C ""C:\Program Files ^(x86^)\7-Zip\7z.exe"" x C:\Windows\Temp\prl-tools-win.iso -oC:\Windows\Temp\parallels
 	cmd /C C:\Windows\Temp\parallels\PTAgent.exe /install_silent
 	rd /S /Q "c:\Windows\Temp\parallels"
 )
