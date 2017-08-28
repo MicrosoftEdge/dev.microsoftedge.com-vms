@@ -3,6 +3,7 @@
     {
       "type": "hyperv-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "answer_files/10/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",
@@ -12,6 +13,7 @@
     {
       "type": "virtualbox-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "answer_files/10/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",
@@ -21,6 +23,7 @@
     {
       "type": "vmware-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "answer_files/10/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",
@@ -30,6 +33,7 @@
     {
       "type": "parallels-iso",
       "floppy_files": [
+        "floppy/common/setautologon.ps1",
         "answer_files/10/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",

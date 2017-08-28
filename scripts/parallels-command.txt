@@ -1,3 +1,0 @@
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/admin/packer
-cd /Users/admin/dev.microsoftedge.com-vms/scripts
-/Users/admin/packer/packer build -only=parallels-iso -color=false -force ./template-output/IE10-Win8.json

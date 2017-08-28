@@ -76,11 +76,44 @@ namespace VMSGen
                     }
                 }
 
-                resultVms.SoftwareList.AddRange(softwareList.ToArray());
+                foreach (var softwareItem in softwareList)
+                {
+                    MergeSoftwareItems(resultVms.SoftwareList, softwareItem);
+                    // resultVms.SoftwareList.AddRange(softwareList.ToArray());                    
+                }                
             }
 
             return resultVms;
         }
+
+        private void MergeSoftwareItems(List<Software> softwareList, Software softwareItem)
+        {
+            var software = softwareList.FirstOrDefault(x => x.SoftwareName == softwareItem.SoftwareName);
+
+            if (software == null)
+            {
+                softwareList.Add(softwareItem);
+            }
+            else
+            {
+                foreach (var browser in softwareItem.VMS)
+                {
+                    if (software.VMS.SingleOrDefault(vms => AreTheSameBrowserValues(vms, browser)) == null)
+                    {
+                        software.VMS.Add(browser);
+                    }
+                }
+            }
+        }
+
+        private static bool AreTheSameBrowserValues(Browser vms, Browser browser)
+        {
+            return vms.BrowserName == browser.BrowserName
+                && vms.Build == browser.Build
+                && vms.OSVersion == browser.OSVersion
+                && vms.Version == browser.Version;
+        }
+
 
         private void GenerateSoftwareList(List<Software> softwareList, dynamic softwareName)
         {

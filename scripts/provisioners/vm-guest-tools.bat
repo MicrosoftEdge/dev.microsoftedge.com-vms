@@ -62,7 +62,9 @@ goto :done
 
 :: There needs to be Oracle CA (Certificate Authority) certificates installed in order
 :: to prevent user intervention popups which will undermine a silent installation.
-cmd /c certutil -addstore -f "TrustedPublisher" A:\oracle-cert.cer
+cmd /c "e: && cd cert && for %%i in (vbox*.cer) do VBoxCertUtil add-trusted-publisher %%i --root %%i"
+
+:: certutil -addstore -f "TrustedPublisher" A:\oracle-cert.cer
 
 ::move /Y C:\Users\IEUser\VBoxGuestAdditions.iso C:\Windows\Temp
 ::cmd /c ""C:\Program Files\7-Zip\7z.exe" x C:\Windows\Temp\VBoxGuestAdditions.iso -oC:\Windows\Temp\virtualbox"
@@ -72,7 +74,7 @@ goto :done
 :parallels
 if exist "C:\Users\IEUser\prl-tools-win.iso" (
 	move /Y C:\Users\IEUser\prl-tools-win.iso C:\Windows\Temp
-	cmd /C "C:\Program Files ^(x86^)\7-Zip\7z.exe" x C:\Windows\Temp\prl-tools-win.iso -oC:\Windows\Temp\parallels
+	cmd /C ""C:\Program Files ^(x86^)\7-Zip\7z.exe"" x C:\Windows\Temp\prl-tools-win.iso -oC:\Windows\Temp\parallels
 	cmd /C C:\Windows\Temp\parallels\PTAgent.exe /install_silent
 	rd /S /Q "c:\Windows\Temp\parallels"
 )

@@ -3,7 +3,7 @@
     {
       "type": "hyperv-iso",
       "floppy_files": [
-        "answer_files/10/autounattend.xml",
+        "answer_files/10_preview/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",
         "floppy/eula/win10/eula.txt"
@@ -12,7 +12,7 @@
     {
       "type": "virtualbox-iso",
       "floppy_files": [
-        "answer_files/10/autounattend.xml",
+        "answer_files/10_preview/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",
         "floppy/eula/win10/eula.txt"
@@ -21,7 +21,7 @@
     {
       "type": "vmware-iso",
       "floppy_files": [
-        "answer_files/10/autounattend.xml",
+        "answer_files/10_preview/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",
         "floppy/eula/win10/eula.txt"
@@ -30,7 +30,7 @@
     {
       "type": "parallels-iso",
       "floppy_files": [
-        "answer_files/10/autounattend.xml",
+        "answer_files/10_preview/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/win10/bgconfig.bgi",
         "floppy/eula/win10/eula.txt"

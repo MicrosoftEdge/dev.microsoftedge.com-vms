@@ -1,6 +1,7 @@
 {
   "variables": {
-    "iso_url": "iso/14926.1000.160910-1529.RS_PRERELEASE_CLIENTENTERPRISEEVALN_OEMRET_X64FRE_EN-US.iso",
-    "iso_checksum": "8A8B1383243A1B2F9D0448B4551E6E13CA264C52"	
+    "iso_url": "iso/16232.1000.170624-1334.RS_PRERELEASE_CLIENTENTERPRISEEVAL_OEMRET_X64FRE_EN-US.iso",
+    "iso_checksum": "19a1b0f0aaadb6a77ce044f9ad16bd25",
+    "iso_checksum_type": "md5"
   }
 }

@@ -32,6 +32,7 @@ param (
   [switch]$Download = $False,
   [switch]$OnlyUpload = $False,
   [switch]$GenerateJSON = $True,
+  [switch]$KeepOutput = $False,
   [int]$Instance = 1
 )
 
@@ -94,6 +95,7 @@ function Create-LockFile ($vms) {
                         $myObject2 | Add-Member -type NoteProperty -name Windows -Value $winVersion
                         $myObject2 | Add-Member -type NoteProperty -name Generated -Value $False
                         $myObject2 | Add-Member -type NoteProperty -name Failed -Value $False
+                        $myObject2 | Add-Member -type NoteProperty -name Retried -Value $False
                         $myObject2 | Add-Member -type NoteProperty -name Start -Value $null
                         $myObject2 | Add-Member -type NoteProperty -name End -Value $null
 
@@ -287,8 +289,10 @@ function Compress-SingleAndMultipart ($zipFolder, $zipName, $source) {
     Generate-Hashes $zipFolder $md5FolderPath
     LogWrite "MD5 File Hashes generated in $md5FolderPath."
 
-    LogWrite "Removing output files..."
-    Remove-Item $source -Recurse -Force
+    if($TestMode -eq $False){
+        LogWrite "Removing output files..."
+        Remove-Item $source -Recurse -Force  
+    }
 }
 
 function Upload() {
@@ -315,11 +319,16 @@ function Upload() {
 function Remove-OutputFiles () {
     $outputPath = $global:Config.OutputPath
 
-    Remove-Item $outputPath\VMBuild_$global:buildId -recurse -Force
-    LogWrite "Removed output files from $outputPath\VMBuild_$global:buildId"
+    if($KeepOutput -eq $False){
+        Remove-Item $outputPath\VMBuild_$global:buildId -recurse -Force
+        LogWrite "Removed output files from $outputPath\VMBuild_$global:buildId"
 
-    Remove-Item $outputPath\md5\VMBuild_$global:buildId -recurse -Force
-    LogWrite "Removed output files from $outputPath\md5\VMBuild_$global:buildId"
+        Remove-Item $outputPath\md5\VMBuild_$global:buildId -recurse -Force
+        LogWrite "Removed output files from $outputPath\md5\VMBuild_$global:buildId"
+
+    } else {
+        LogWrite "Skipping remove output files from $outputPath\md5\VMBuild_$global:buildId"
+    }
 }
 
 function Check-RestartEnableHyperV() {
@@ -344,6 +353,14 @@ function Check-RestartDisableHyperV() {
         Restart-Computer -Force
         Exit
     }
+}
+
+function Restart-System(){
+    Create-RestartRegistryEntry
+    LogWrite "Restarting in 10s..."
+    Start-Sleep -s 10    
+    Restart-Computer -Force
+    Exit
 }
 
 function Clear-Temp () {
@@ -418,12 +435,17 @@ function Start-GenerationProcess {
 
         $item = $_
 
-        If ($_.Generated -eq $False) {
+        If ($_.Generated -eq $False -and $_.Retried -eq $False) {                        
 
             $software = $_.Software
             $windows = $_.Windows
             $browser = $_.Browser
-            $os = $_.OS
+            $os = $_.OS            
+
+            if ($item.Failed -eq $True -and $item.Retried -eq $False) {                    
+                $item.Retried = $True
+                LogWrite "Retrying $software $windows $browser"
+            }
 
             $item.Start = Get-Date -Format G
 
@@ -456,8 +478,13 @@ function Start-GenerationProcess {
             }
             catch
             {
-                $item.Failed = $True
                 LogWrite "Error: $_"
+                $item.Failed = $True
+                if ($item.Retried -eq $False) {                                       
+                    LogWrite "Order retry for $software $windows $browser. Force restart before initiating process." 
+                    $lock | ConvertTo-Json | Out-File "$global:Path\vmgen.json.lock"                   
+                    Restart-System
+                }                                                                                
             }
 
             $item.End = Get-Date -Format G
@@ -468,10 +495,7 @@ function Start-GenerationProcess {
 
     LogWrite "Process finished."
 
-    Send-NotificationEmail
-
     Clear-Temp
-
 }
 
 function Generate-SofwareListJson () {
@@ -480,7 +504,7 @@ function Generate-SofwareListJson () {
 }
 
 function Send-NotificationEmail () {
-
+    
     $smtp = $global:Config.Mail.SMTP
     $from = $global:Config.Mail.From
     $to = $global:Config.Mail.To
@@ -494,6 +518,8 @@ function Send-NotificationEmail () {
 
     $error = 0;
     $total = 0;
+
+    $lock = (Get-Content "$global:Path\vmgen.json.lock" -Raw) | ConvertFrom-Json
 
     $list = ($lock | ForEach-Object{
         $total++
@@ -527,9 +553,40 @@ function Send-NotificationEmail () {
     $secpasswd = ConvertTo-SecureString $password -AsPlainText -Force
     $mycreds = New-Object System.Management.Automation.PSCredential ($user, $secpasswd)
 
-    Send-mailmessage -to $to -from $from -subject $subject -credential $mycreds -useSSL -body $body -BodyAsHtml -Attachments $Logfile -smtpServer $smtp
+    $outputPath = $global:Config.OutputPath
+    $vmsFile = "$outputPath\notification\vms.json"
+
+    Send-mailmessage -to $to -from $from -subject $subject -credential $mycreds -useSSL -body $body -BodyAsHtml -Attachments $Logfile,$vmsFile -smtpServer $smtp
 
     LogWrite "Email sended to $to with '$subjectstatus' status"
+}
+
+function Prepare-SofwareListJsonToBeNotified () {
+    $outputPath = $global:Config.OutputPath
+
+    if (-Not (Test-Path $outputPath\notification)) {
+            New-Item -ItemType Directory -Force -Path $outputPath\notification
+        }
+
+    if(Get-Member -inputobject $global:Config -name "OsRenaming" -Membertype Properties){
+        $osRenames = $global:Config.OsRenaming.PSObject.Properties
+        
+        $vmsOutputList = (Get-Content "$outputPath\vms.json" -Raw) | ConvertFrom-Json
+
+        foreach ($_ in $osRenames) {            
+            foreach ($software in $vmsOutputList.softwareList) {
+                foreach ($vms in $software.vms) {
+                    if($vms.osVersion -eq $_.Name){
+                        $vms.osVersion = $_.Value
+                    }
+                }
+            }
+        }        
+        $vmsOutputList | ConvertTo-Json -depth 100 | Out-File "$outputPath\notification\vms.json"
+
+    } else {
+        Copy-Item $outputPath\vms.json $outputPath\notification
+    } 
 }
 
 function Download-ISOs () {
@@ -538,6 +595,26 @@ function Download-ISOs () {
     $start_time = Get-Date
 
     & ..\bin\AzCopy\AzCopy.exe /Source:$url/iso /Dest:iso /SourceKey:$key /Y /S
+}
+
+function Update-Mac() {
+    $lock = (Get-Content "$global:Path\vmgen.json.lock" -Raw) | ConvertFrom-Json
+    $MacImages = $lock | where { $_.OS -eq "Mac"} | Measure-Object
+    if($MacImages.Count -gt 0){
+        LogWrite "Mac images in the generation list. Updating files in the Mac machine..."
+
+        $networkPath = $global:Config.Mac.NetworkPath
+        $SSHUser = $global:Config.Mac.SSH_User
+        $SSHPassword = $global:Config.Mac.SSH_Password
+
+        If (!(Test-Path M:))
+        {
+            Invoke-Expression "net use M: $networkPath /USER:$SSHUser $SSHPassword"
+            LogWrite "Drive M mapped to $networkPath"
+        }   
+
+        ROBOCOPY ..\scripts M:\scripts /MIR /R:5 /W:10 /xo /fft
+    }
 }
 
 If ($Continue -eq $False -and (Test-Path $LogFile)) {
@@ -551,7 +628,10 @@ If ($Download -eq $True) {
     Download-ISOs
 }
 
-Start-BuildPackerTemplates
+if($Continue -eq $False ){    
+    Start-BuildPackerTemplates
+    Update-Mac
+}
 
 If ($Build -eq $True) {
     Start-GenerationProcess
@@ -559,5 +639,7 @@ If ($Build -eq $True) {
 
 If ($GenerateJSON -eq $True -or $Build -eq $True) {
     Generate-SofwareListJson
+    Prepare-SofwareListJsonToBeNotified
+    Send-NotificationEmail
     Remove-OutputFiles
 }

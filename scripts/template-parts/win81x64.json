@@ -13,7 +13,7 @@
       "iso_checksum_type": "sha1",
       "ssh_username": "{{ user `ssh_user` }}",
       "ssh_password": "{{ user `ssh_pwd` }}",
-      "ssh_wait_timeout": "10000s",
+      "ssh_timeout": "16h",
       "disk_size": 40960,
       "switch_name": "",
       "shutdown_command": "{{ user `shutdown_command`}}",
