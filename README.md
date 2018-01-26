@@ -11,8 +11,8 @@ There are some known issues with the scripts so make sure to check the issues se
 Currently this process only works on Windows 8.1 machines.
 
 ## Software Requirements
-* Windows 8.1 (working on a solution that works for Windows 10)
-* [Packer 1.0.2 For Windows and Mac](https://packer.io/downloads.html) 
+* Windows 10 - version 1709
+* [Packer 1.1.2 For Windows and Mac](https://packer.io/downloads.html) 
 * [VirtualBox 5.0.2 for Windows hosts](https://www.virtualbox.org/wiki/Downloads)
 * [VMware Workstation](http://www.vmware.com/products/workstation)
 * Hyper-V
@@ -44,8 +44,7 @@ Unzip Packer files to `C:\packer`.
 
 #### Hyper-V support
 
-Packer doesn't support Hyper-V currently. [PR-2576](https://github.com/mitchellh/packer/pull/2576) adds support to it but hasn't been merged yet.
-Although we are working on updating the project to work with that PR, in the meantime you will have to use this [Hyper-V plugin for Packer](https://github.com/pbolduc/packer-hyperv/). Please follow the instructions in the repo to compile it for Windows and place the plugin into `C:\packer`.
+The Hyper-V ISO builder in Packer 1.1.2 works well on Windows 10 version 1709.
 
 #### VirtualBox support
 
