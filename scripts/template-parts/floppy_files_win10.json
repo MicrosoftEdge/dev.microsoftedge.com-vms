@@ -3,41 +3,37 @@
     {
       "type": "hyperv-iso",
       "floppy_files": [
-        "floppy/common/setautologon.ps1",
-        "answer_files/10/autounattend.xml",
-        "floppy/common/preprovisioner.cmd",
-        "floppy/bginfo/win10/bgconfig.bgi",
-        "floppy/eula/win10/eula.txt"
+        "./answer_files/10/autounattend.xml",
+        "./floppy/eula/win10/eula.txt",
+        "./floppy/bginfo/win10/bgconfig.bgi",
+        "./floppy/openssh/win10/openssh.ps1"
       ]
     },
     {
       "type": "virtualbox-iso",
       "floppy_files": [
-        "floppy/common/setautologon.ps1",
-        "answer_files/10/autounattend.xml",
-        "floppy/common/preprovisioner.cmd",
-        "floppy/bginfo/win10/bgconfig.bgi",
-        "floppy/eula/win10/eula.txt"
+        "./answer_files/10/autounattend.xml",
+        "./floppy/eula/win10/eula.txt",
+        "./floppy/bginfo/win10/bgconfig.bgi",
+        "./floppy/openssh/win10/openssh.ps1"
       ]
     },
     {
       "type": "vmware-iso",
       "floppy_files": [
-        "floppy/common/setautologon.ps1",
-        "answer_files/10/autounattend.xml",
-        "floppy/common/preprovisioner.cmd",
-        "floppy/bginfo/win10/bgconfig.bgi",
-        "floppy/eula/win10/eula.txt"
+        "./answer_files/10/autounattend.xml",
+        "./floppy/eula/win10/eula.txt",
+        "./floppy/bginfo/win10/bgconfig.bgi",
+        "./floppy/openssh/win10/openssh.ps1"
       ]
     },
     {
       "type": "parallels-iso",
       "floppy_files": [
-        "floppy/common/setautologon.ps1",
-        "answer_files/10/autounattend.xml",
-        "floppy/common/preprovisioner.cmd",
-        "floppy/bginfo/win10/bgconfig.bgi",
-        "floppy/eula/win10/eula.txt"
+        "./answer_files/10/autounattend.xml",
+        "./floppy/eula/win10/eula.txt",
+        "./floppy/bginfo/win10/bgconfig.bgi",
+        "./floppy/openssh/win10/openssh.ps1"
       ]
     }
   ]

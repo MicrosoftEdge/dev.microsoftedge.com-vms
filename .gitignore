@@ -36,7 +36,7 @@ bin/*.vshost.exe
 scripts/vmgen.json.lock
 scripts/vmgen.json
 scripts/floppy/build.cfg
-scripts/vmgen.log
+scripts/*.log
 scripts/vmgen.cfg
 scripts/parallels-command.txt
 *.user

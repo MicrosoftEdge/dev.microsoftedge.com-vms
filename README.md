@@ -8,8 +8,6 @@ Some of these steps will not make sense for you so feel free to hack around and 
 
 There are some known issues with the scripts so make sure to check the issues section.
 
-Currently this process only works on Windows 8.1 machines.
-
 ## Software Requirements
 * Windows 10 - version 1709
 * [Packer 1.1.2 For Windows and Mac](https://packer.io/downloads.html) 
@@ -48,7 +46,7 @@ The Hyper-V ISO builder in Packer 1.1.2 works well on Windows 10 version 1709.
 
 #### VirtualBox support
 
-We automatically install the Guest Extensions, but to do that silently the installation needs to add the Oracle certificate to the list of trusted certs in the guest OS. Right now we suggest that you follow the process described in [this guide](http://www.catonrug.net/2013/03/virtualbox-silent-install-store-oracle-certificate.html). You will have to place that `.cer` file in `scripts\floppy\guesttools\oracle-cert.cer`. In the near future we plan to update the process to follow the guidance of the [official manual](https://www.virtualbox.org/manual/ch04.html#additions-windows) in the section **4.2.1.3. Unattended Installation**.
+We automatically install the Guest Extensions, but to do that silently the installation needs to add the Oracle certificate to the list of trusted certs in the guest OS. Right now we suggest that you follow the process described in [this guide](https://web.archive.org/web/20170226085950/http://www.catonrug.net/2013/03/virtualbox-silent-install-store-oracle-certificate.html). You will have to place that `.cer` file in `scripts\floppy\guesttools\oracle-cert.cer`. In the near future we plan to update the process to follow the guidance of the [official manual](https://www.virtualbox.org/manual/ch04.html#additions-windows) in the section **4.2.1.3. Unattended Installation**.
 
 ### Set PowerShell Execution Policy
 Set the execution policy by typing this into your powershell window:
