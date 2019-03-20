@@ -134,7 +134,7 @@ function DownloadSSH () {
 }
 
 function OpenSSH () {
-  #Start-Service "OpenSSHd"
+  Start-Service "OpenSSHd"
 
 #  If ($software -eq "HyperV" -or $software -eq "VPC") {
 #    Stop-Computer -Force

@@ -16,7 +16,7 @@
       "ssh_timeout": "16h",
       "ram_size": 2048,
       "disk_size": 40960,
-      "switch_name": "",
+      "switch_name": "Default Switch",
       "shutdown_command": "{{ user `shutdown_command`}}",
       "output_directory" : "..\\vms\\output\\MSEdge-Win10-HyperV"
     },

@@ -6,6 +6,7 @@
         "answer_files/81/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/bgconfig.bgi",
+        "floppy/openssh/openssh.ps1",
         "floppy/eula/win81/eula.txt"
       ]
     },
@@ -15,6 +16,7 @@
         "answer_files/81/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/bgconfig.bgi",
+        "floppy/openssh/openssh.ps1",
         "floppy/eula/win81/eula.txt"
       ]
     },
@@ -24,6 +26,7 @@
         "answer_files/81/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/bgconfig.bgi",
+        "floppy/openssh/openssh.ps1",
         "floppy/eula/win81/eula.txt"
       ]
     },
@@ -33,6 +36,7 @@
         "answer_files/81/autounattend.xml",
         "floppy/common/preprovisioner.cmd",
         "floppy/bginfo/bgconfig.bgi",
+        "floppy/openssh/openssh.ps1",
         "floppy/eula/win81/eula.txt"
       ]
     }    
