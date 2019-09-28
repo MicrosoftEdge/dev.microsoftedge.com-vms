@@ -247,13 +247,14 @@ function Compress($software, $browser, $windows, $oshost) {
         LogWrite "Starting Vagrant compression..."
         # Compress Vagrant
         $zipFolder = "$outputPath\VMBuild_$global:buildId\Vagrant\$browser\"
-        $zipName = "$browser.$windows.Vagrant.zip"
+        $zipName = "$browser.$windows.Vagrant.box"
 
         $sourceBox = "$global:Path\..\vms\output\Vagrant\edgems.box"
         $source = "$global:Path\..\vms\output\Vagrant\$browser - $windows.box"
         If (Test-Path $sourceBox) { Move-Item $sourceBox $source -Force }
-
-        Compress-SingleAndMultipart $zipFolder $zipName $source
+        # We do NOT want to try and further compress the .box, it is already compressed and
+        # adding the extra layer of archiving BREAKS `vagrant box add --name ModernIE https://aka.ms/msedge.win10.vagrant`
+        Compress-SingleAndMultipart $zipFolder $zipName $source $skipCompression=$True
     }
 }
 
@@ -266,7 +267,7 @@ function Generate-Hashes ($zipsPath, $outputPath) {
     }
 }
 
-function Compress-SingleAndMultipart ($zipFolder, $zipName, $source) {
+function Compress-SingleAndMultipart ($zipFolder, $zipName, $source, $skipCompression=$False) {
     $multipart = $global:Config.GenerateMultipart
 
     IF(Test-Path $zipFolder) {
@@ -276,14 +277,19 @@ function Compress-SingleAndMultipart ($zipFolder, $zipName, $source) {
 
     $outputPath = $global:Config.OutputPath
 
-    IF ($multipart -eq $True) {
-      LogWrite "Compressing VM to multipart file ZIP $source $zipName in $zipFolder"
-      & 7z a $zipFolder$zipName $source -tzip -r -v1G -aoa | Out-Null
+    IF ($skipCompression -eq $False) {
+        IF ($multipart -eq $True) {
+          LogWrite "Compressing VM to multipart file ZIP $source $zipName in $zipFolder"
+          & 7z a $zipFolder$zipName $source -tzip -r -v1G -aoa | Out-Null
+        }
+
+        LogWrite "Compressing VM to single file ZIP $source $zipName in $zipFolder"
+        & 7z a $zipFolder$zipName $source -tzip -r -aoa | Out-Null
+    } else {
+        # In the Vagrant case, we just want the .box not a .zip
+        Move-Item $source $zipFolder$zipName -Force
     }
-
-    LogWrite "Compressing VM to single file ZIP $source $zipName in $zipFolder"
-    & 7z a $zipFolder$zipName $source -tzip -r -aoa | Out-Null
-
+    
     $md5FolderPath = "$outputPath\md5\VMBuild_$global:buildId"
     LogWrite "Generating File Hashes..."
     Generate-Hashes $zipFolder $md5FolderPath
